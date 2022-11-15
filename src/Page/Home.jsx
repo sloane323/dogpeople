@@ -7,7 +7,12 @@ import page2bac from '../img/main_s1.png';
 import page3bac from '../img/main_s2.png';
 import Mainphotos from "../Componment/Mainphotos";
 
+
+
 const Home = () => {
+
+  
+
     return (<div className="mainebig">
          <img src={backing} alt={`loading2`} className="backing"/>
 
@@ -47,6 +52,7 @@ const Home = () => {
 
 
         <div className="main4page">
+
         <Mainphotos />
         </div>
 

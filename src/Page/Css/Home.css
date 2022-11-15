@@ -50,8 +50,8 @@ top: 2vmin;
 
 .main2page{
     position: relative;
-    background-image: url(/src/img/doc.jpg);
-    background-size: 50rem;
+    background-image: url(/src/img/main_01.jpg);
+    background-size: 100rem;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: top right;
@@ -86,7 +86,6 @@ top: 2vmin;
 .page3bac{
     width: 100%;
     background-image: url(/src/img/play.jpg);
-    background-size: 50rem;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: top left;
@@ -97,32 +96,4 @@ top: 2vmin;
     border: 1px solid black;
 }
 
-.container1 {
-    text-align: center;
-    height: 50vh;
-    left: 200px;
-    background-color: aqua;
-}
-.container {
-    position: relative;
-    width: 85%;
-    height: inherit;
-    display: inline-block;
-    justify-content : center;
-    background-color: yellow;
 
-}
-
-.Slider{
-    display: flex;
-    position: relative;
-    background-color: pink;
-    text-align: center;
-}
-
-.container img {
-    width: 16rem;
-    margin: 2px;
-    padding: 2px;
-    height: 10rem;
-}
