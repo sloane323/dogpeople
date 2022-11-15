@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/sloane323/dogpeople/static/css/main.073c9b0a.css",
+    "main.js": "/sloane323/dogpeople/static/js/main.fe950d6a.js",
+    "static/js/787.45fcf0d0.chunk.js": "/sloane323/dogpeople/static/js/787.45fcf0d0.chunk.js",
+    "static/media/logo.svg": "/sloane323/dogpeople/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/sloane323/dogpeople/index.html",
+    "main.073c9b0a.css.map": "/sloane323/dogpeople/static/css/main.073c9b0a.css.map",
+    "main.fe950d6a.js.map": "/sloane323/dogpeople/static/js/main.fe950d6a.js.map",
+    "787.45fcf0d0.chunk.js.map": "/sloane323/dogpeople/static/js/787.45fcf0d0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.fe950d6a.js"
+  ]
+}
