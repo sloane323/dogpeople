@@ -6,6 +6,7 @@
 }
 
 .mainebig{
+    overflow: hidden;
 }
 
 .home-logo {
@@ -43,7 +44,7 @@ top: 2vmin;
     position: absolute;
     top: -3rem;
     right: 6rem;
-    width: 20vw;
+    width: 30vw;
     z-index: -1;
     transform:rotate(20deg)
 }

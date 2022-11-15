@@ -53,7 +53,7 @@ const Home = () => {
 
         <div className="main4page">
 
-        <Mainphotos />
+
         </div>
 
 
