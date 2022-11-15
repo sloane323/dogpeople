@@ -31,10 +31,13 @@ const Home = () => {
         <div className="main2page">
         <img src={page2bac} alt={`page2`} className="page2bac"/>
         <div className="main2page-text">
-        <p><h1><b> 반려견과 행복하기 위한 7가지 방법 </b> </h1></p>
+         <p>반려견과 행복하기 위한</p>
+        <p><h2><b>  7가지 방법 </b> </h2></p>
            <p> 설채현 수의사가 알려주는 교감 방법  </p>
            <p> 강의 후 개별 포토 타임 진행   </p>
+           <div> <button> 상세보기 </button></div>
            </div>
+          
         </div>
 
         <div className="main25page">
@@ -44,16 +47,17 @@ const Home = () => {
         <div className="main3page">
         <img src={page3bac} alt={`page3`} className="page3bac"/>
         <div className="main3page-text">
-        <p><h1><b> 반려인을 위한 특별한 투어 이벤트  </b> </h1></p>
-           <p> Pat + Family  </p>
-           <p> 너와 나의 특별한 동행   </p>
+         <p>반려동물시민학교</p>
+        <p><h1><b> 우리 같이 학교가자  </b> </h1></p>
+           <p> 이웃갈등을 예방하고 행복한 생활을 위하여 </p>
+           <p> 사회화ㆍ예절교육, 행동교정교육 </p>
+           <div> <button> 상세보기 </button></div>
            </div>
         </div>
 
 
         <div className="main4page">
-<Mainphotos />
-
+        <Mainphotos />
         </div>
 
 

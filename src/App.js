@@ -6,13 +6,15 @@ import Home from './Page/Home';
 import Course from './Page/Course';
 import Booking from './Page/Booking';
 import Review from './Page/Review';
-import Header from './Componment/Header';
+import Header from './Page/Header';
+import Footer from './Page/Footer';
+
 
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      < Header />
 
       <Routes> 
           <Route path='/' element={<Home />}> </Route>
@@ -21,6 +23,9 @@ function App() {
           <Route path='/booking' element={<Booking />}> </Route>
           <Route path='/review' element={<Review />}> </Route>
       </Routes> 
+
+    <Footer />
+
 
     </div>
   );

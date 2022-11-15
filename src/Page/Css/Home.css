@@ -6,14 +6,14 @@
 }
 
 .mainebig{
-    overflow: hidden;
+
 }
 
 .home-logo {
 position: relative;
 top: 2vmin;
  text-align: left;
- margin-left: 3vmin;
+ margin-left: 7vmin;
 }
 
 .home-Sideicon{
@@ -28,7 +28,7 @@ top: 2vmin;
 
     text-shadow:
     3px 3px 0 white,
-  0px -1px 0 white,  
+    0px -1px 0 white,  
    1px -1px 0 white,
    -1px 1px 0 white,
     1px 1px 0 white;
@@ -42,7 +42,7 @@ top: 2vmin;
 
 .backing {
     position: absolute;
-    top: -3rem;
+    top: -5rem;
     right: 6rem;
     width: 30vw;
     z-index: -1;
@@ -66,11 +66,13 @@ top: 2vmin;
 .main2page-text{
     font-family: 'GmarketSansMedium';
     position: absolute;
-    top:10%;
-    border: 1px solid black;
+    top:30%;
+    text-align: left;
     margin-left: 4rem;
     height: 50%;
     width: 50%;
+    font-size: 2vmax;
+    line-height: 1vmax;
 }
 
 .main25page {
@@ -94,7 +96,16 @@ top: 2vmin;
 
 .main3page-text{
     font-family: 'GmarketSansMedium';
-    border: 1px solid black;
+    font-size: 2vmax;
+    text-align: right;
+    padding-right: 10vmax;
+    padding-top: 20vmax;
+    line-height: 1vmax;
+}
+
+.main4page{
+    overflow: hidden;
+
 }
 
 

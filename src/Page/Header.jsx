@@ -1,6 +1,6 @@
 
-import Logo from './Logo';
-import Sideicon from './Side';
+import Logo from '../Componment/Logo';
+import Sideicon from '../Componment/Side';
 
 const Header = () => {
     return ( 
