@@ -6,11 +6,13 @@ import Home from './Page/Home';
 import Course from './Page/Course';
 import Booking from './Page/Booking';
 import Review from './Page/Review';
+import Header from './Componment/Header';
 
 
 function App() {
   return (
     <div className="App">
+      <Header />
 
       <Routes> 
           <Route path='/' element={<Home />}> </Route>

@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'PyeongChangPeace-Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@800&family=Pacifico&display=swap');
+
+.logo-W {
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 4vmin;
+
+}
+.logo-dog {
+    font-family: 'Pacifico', cursive;
+    font-size: 8vmin;
+    color: #61A5B2;
+
+}
+
+.logo-n {
+    position: relative;
+    left: -7vmin;
+    top: 3vmin;
+}
