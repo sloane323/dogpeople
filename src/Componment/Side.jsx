@@ -20,7 +20,8 @@ const Sideicon = () => {
 
 <NavLink to="/"  activeStyle={activeStyle} >Home <br></br></NavLink>
 <NavLink to="/info"  activeStyle={activeStyle}>Introduce<br></br></NavLink>
-<NavLink to="course"  activeStyle={activeStyle}>Caurse<br></br></NavLink>
+<NavLink to="/course"  activeStyle={activeStyle}>Caurse<br></br></NavLink>
+<NavLink to="/place"  activeStyle={activeStyle}>Place<br></br></NavLink>
 <NavLink  to="/Booking"  activeStyle={activeStyle}>Booking<br></br></NavLink>
 <NavLink  to="/Review"  activeStyle={activeStyle}>Review<br></br></NavLink>
 

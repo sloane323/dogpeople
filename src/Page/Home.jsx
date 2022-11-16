@@ -60,7 +60,7 @@ const Home = () => {
         <Mainphotos />
         </div>
 
-
+       
     </div>  );
 }
  

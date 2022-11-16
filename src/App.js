@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { Routes, Route} from 'react-router-dom';
 import Info from './Page/Info';
@@ -8,6 +8,7 @@ import Booking from './Page/Booking';
 import Review from './Page/Review';
 import Header from './Page/Header';
 import Footer from './Page/Footer';
+import Place from './Page/Place';
 
 
 
@@ -18,8 +19,11 @@ function App() {
 
       <Routes> 
           <Route path='/' element={<Home />}> </Route>
-          <Route path='/info' element={<Info />}> 
-          <Route path='course' element={<Course />} /></Route>
+          <Route path='/info' element={<Info />} > 
+          <Route path='course' element={<Course />}/>
+          <Route path='place' element={<Place />} /> </Route>
+          <Route path='/course' element={<Course />} />
+          <Route path='/place' element={<Place />} />
           <Route path='/booking' element={<Booking />}> </Route>
           <Route path='/review' element={<Review />}> </Route>
       </Routes> 
