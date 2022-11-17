@@ -16,7 +16,7 @@ const Review = () => {
       date: today.getDate(), // 현제 날짜
     };
     const dayOfWeek = week[today.getDay()];
-    const clickdate = `${time.year} / ${time.month} / ${time.date} / ${dayOfWeek} `;
+    const clickdate = `${time.year}. ${time.month}. ${time.date} (${dayOfWeek}) `;
   
   
     const [note, setNote] = useState('');
@@ -96,13 +96,12 @@ const Review = () => {
   
   const input_list = lists.map((list) => (
     <div className="rgyPostIt">
-     <div>  <button  onClick={() => removeList(list.id)} > X </button> </div>
-    <li key={list.id} ><div> 글번호 : {list.id} </div>
-    <div  id="wrtinb">작성자 : {list.name} </div>  
-    <div>{list.text}</div>
-    <div>별점:{list.star} </div>
-    <div id="wrtin"> 작성일: {clickdate} <br></br>  </div> 
-
+     <div>  <button  onClick={() => removeList(list.id)}  > X </button> </div>
+    <li key={list.id} ><div className="rgyPostIt-id"> 글번호 : {list.id}  |  작성자 : {list.name} <br></br> 
+    작성일: {clickdate}  </div>
+    <div className="rgyPostIt-star">{list.star} </div>
+    <div  className="rgyPostIt-text">{list.text}</div>
+ 
     </li>
     </div>
   ));
@@ -154,7 +153,7 @@ const Review = () => {
           value={note}  onChange={onChange}  ref={inputnote} id="textbox"
            className='name_box' style={{ height: "100px"}} required />
     <br></br> <br></br>
-        <button type="submit" className='ckeckreview'>리뷰남기기</button>
+        <button type="submit" className='ckeckreview'>작성</button>
       </form>
 
 
@@ -162,7 +161,7 @@ const Review = () => {
   <div className='inputlistun'>
       <ul>{input_list}</ul> </div>
 
-<br></br><br></br><br></br>
+
      </div> 
     </div> );
 }

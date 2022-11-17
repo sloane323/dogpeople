@@ -1,0 +1,53 @@
+.booking-all {
+    font-family: 'GmarketSansMedium';
+    font-size: 3vmax;
+}
+
+.title-date{
+    display: flex;
+    justify-content : center;
+    margin-top: 0em;
+}
+
+.datebox2{
+    width: 20em;
+    height: 5em;
+    overflow:auto ;
+    white-space: nowrap;
+}
+
+.datebox {
+    transition: all 0.85s ease;
+
+    }
+
+
+.datebox button:hover {
+        border: 1px solid #61A5B2;;
+        color: #61A5B2;
+    }
+
+.datebox button{
+    border: 1px solid;
+    width: 7em;
+    margin-top: 2em;
+    margin: 10px;
+    border-radius: 10px;
+    font-family: 'GmarketSansMedium';
+    font-size: 1vmax;
+    color: #61A5B2;
+    border: none;
+    transition: all 0.1s ease;
+    background-color: none;
+
+}
+
+
+
+button.active22 {
+    border: 3px solid #61A5B2;
+
+}
+
+
+

@@ -35,7 +35,7 @@ color: #787878;
 
 .review ul{
   text-align:left;
-  margin: 2px;
+
 }
 
 .review li {
@@ -43,7 +43,8 @@ color: #787878;
   display:inline-block;
   margin: 5px;
   padding: 5px;
-  color: #5b9ca0;
+  color: white
+  ;
 }
 
 .reviewbig {
@@ -53,8 +54,22 @@ color: #787878;
 
 
 .ckeckreview {
-  padding: 15px;
+  width: 20%;
+  height: 5%;
+  padding: 20px;
+  background-color: #61A5B2;
+  border: none;
+  border-radius: 10px;
+  margin: 30px;
+  font-family: 'GmarketSansMedium';
+  transition: all 0.2s;
+}
 
+.ckeckreview:hover {
+
+  background-color: #3c6f79;
+  color: white;
+  border: none;
 }
 
 
@@ -70,31 +85,72 @@ color: #787878;
 }
 
 .inputlistun {
+  overflow:auto ;
+  white-space: nowrap;
     background-color: rgb(236, 236, 236);
     width: 100%;
-    height: 100mm;
+    height: 24rem;
+}
+.rgyPostIt button {
+  border: none;
+  display: flex;
+  position: relative;
+  left:200px;
+  transition: all 0.2s;
 }
 
+.rgyPostIt button:hover {
+background-color: black;
+color: white;
+}
+
+.rgyPostIt-id {
+  display: grid;
+  font-size: small;
+  text-align: center;
+  border-bottom: 2px solid #4c8591;
+  padding-bottom: 1em;
+}
+
+
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+
+
+.rgyPostIt-text {
+ 
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 3em;
+}
+
+.rgyPostIt-star{
+  padding-top: 10px;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 1.8em;
+}
 .rgyPostIt {
+   overflow:auto ;
+   height: 15em;
+   width: 15em;
     position: relative;
     display: inline-block;
-    padding: 20px 45px 20px 15px;
-    margin: 5px 0;
-    border: 1px solid #f8f861;
-    border-left: 30px solid #f8f861;
+    padding: 20px 5px 20px 15px;
+    margin: 10px;
+    border: 2px solid #4c8591;
+    border-left: 1px solid #61A5B2;
     border-bottom-right-radius: 60px 10px;
     font-family: 'Nanum Pen Script';
     font-size: 1rem;
-    color: #555;
+    color: rgb(46, 46, 46);
     word-break: break-all;
-    background: #ffff88; /* Old browsers */
-    background: -moz-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(81%, #ffff88), color-stop(82%, #ffff88), color-stop(82%, #ffff88), color-stop(100%, #ffffc6)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%); /* IE10+ */
-    background: linear-gradient(135deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff88', endColorstr='#ffffc6', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+    background: #61A5B2; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #61A5B2 81%, #2a4d53 82%, #103036 82%, #61A5B2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(81%, #61A5B2), color-stop(82%, #3c6870), color-stop(82%, #3c6870), color-stop(100%, #61A5B2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg, #61A5B2 81%, #61A5B2 82%, #61A5B2 82%, #61A5B2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg, #61A5B2 81%, #61A5B2 82%, #61A5B2 82%, #61A5B2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg, #61A5B2 81%, #61A5B2 82%, #61A5B2 82%, #61A5B2 100%); /* IE10+ */
+    background: linear-gradient(135deg, #61A5B2 81%, #61A5B2 82%, #61A5B2 82%, #61A5B2 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#61A5B2', endColorstr='#61A5B2', GradientType=1); /* IE6-9 fallback on horizontal gradient */
     transition: all 0.2s;
     -webkit-transition: all 0.2s;
 }
@@ -142,5 +198,5 @@ div.rgyPostIt > p::before {
 }
 
 div.rgyPostIt > p > a {
-    color: #555;
+    color: black;
 }
