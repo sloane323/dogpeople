@@ -2,10 +2,19 @@
 import React from "react";
 import "./Css/Booking.css";
 import  { useState, useEffect, useRef } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 
 const Booking = () => {
 
+  const {name,humNum,babyNum} = useState(false)
+
+ 
+     const [show, setShow] = useState(false);
+ 
+     const handleClose = () => setShow(false);
+     const handleShow = () => setShow(true);
 
 
   const submit = (e) => {
@@ -41,12 +50,8 @@ const Booking = () => {
       ]
 
 
-      const [shotcheck, settshotcheck] = useState();
-      const onClicks = (e) => {
-        console.log(e.currentTarget);
-        settshotcheck(e.currentTarget.value);
- 
-      };
+
+
 
       const week = ["일", "월", "화", "수", "목", "금", "토"];
       const [tab, setTab] =
@@ -84,28 +89,27 @@ const Booking = () => {
       }
 
 
+
       const [timecheck, settimecheck] = useState();
-
-
       const onClick3 = (e,id) => {
         console.log(e.currentTarget);
         settimecheck(e.currentTarget.value);
-//        let arr = [];
-//        for(let i = 0 ; i <15 ; i++ ) {
-//          if (i != id)  
-//          arr.push(tab[i]);
-//          else 
-//            arr.push(!tab[i]);
-//        }
-//        setTab(arr);
-          setOnly(id);
-
+        setOnly(id);
       };
     
 
+
+      const [onlys,setOnlys] = useState(); // 선택한 id값
+      const [shotcheck, settshotcheck] = useState(); // 값을 읽어옴 
+      const onClicks = (e,id) => {
+        console.log(e.currentTarget);
+        settshotcheck(e.currentTarget.value);
+        setOnlys(id);
+      };
+
     return ( <div className="booking-all">      <br></br>
         <div>
-      <span  className="sub-title">Booking  예약하기 </span> </div>
+      <span  className="sub-title">Booking  예약하기</span> </div>
      <br></br><br></br>
 
 
@@ -119,18 +123,19 @@ const Booking = () => {
 <br></br><br></br>
 
      <div> <lable> 사람 </lable>
-        <select onChange={handleSelect} value={Selected}>
+        <select onChange={handleSelect} value={Selected} class="selected"  required>
           {selectList.map((item) => (
             <option value={item} key={item}>
               {item}
             </option>
           ))}
-        </select> 명, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </select> 명, &nbsp;
    
             <label> 강아지  </label>
               <select 
                 value={period}
-                onChange={onPeriodChange} >
+                onChange={onPeriodChange}
+                class="selected" required>
                 {
                     periodOptions.slice(0, Selected).map(period => (
                         <option value={period.value}>{period.label}</option>
@@ -144,17 +149,37 @@ const Booking = () => {
         <div className='title-date' > 
         <div className="datebox2" required> {dates()} </div>    </div> </div><br></br> 
         <label> 시간을 선택해주세요 </label><br></br> 
-        <button   onClick={onClicks} value={"10:00- 12:00"} id="shotcheck"> <p> 10:00- 12:00 </p> </button>
-        <button className='ckeckreview' onClick={onClicks} value={"12:00- 14:00"} id="shotcheck"> <p> 12:00- 14:00 </p> </button>
+        <button className={ `${onlys === 0  ? 'active3' : ''}` } onClick={(e)=>{onClicks(e,0)}} value={"10:00- 12:00"} id="shotcheck"> <p> 10:00- 12:00 </p> </button>
+        <button className={ `${onlys === 1  ? 'active3' : ''}` } onClick={(e)=>{onClicks(e,1)}} value={"12:00- 14:00"} id="shotcheck"> <p> 12:00- 14:00 </p> </button>
   
       </div>
 
 
 
-            <br></br>
 
-            <button type="submit" className='ckeckreview'>예약하기</button>
+            <button type="submit" className='ckeckreview2' onClick={handleShow} >예약하기</button>
       </form> 
+
+      <Modal className='modal-booking'
+     show={show} onHide={handleClose}>
+
+        <Modal.Body> 
+        <h2> 예약이 완료 되었습니다. </h2> 
+        <p>
+         {username} 님, 안녕하세요  <br></br>
+
+
+         사람 : {Selected}명과 강아지 : {babyNum} 마리가   <br></br>
+        {timecheck}, {shotcheck} 에 함께하는 시티투어에 <br></br>
+        예약되었습니다.</p>
+      
+       </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            확인
+          </Button>
+        </Modal.Footer>
+      </Modal>  
 
     </div> );
 }
