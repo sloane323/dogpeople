@@ -2,3 +2,41 @@
     display: flex;
     height: 200em;
 }
+
+
+.linebox-w {
+    text-align: center;
+    display: inline-block;
+
+}
+
+.linebox {
+    width:40em;
+    height: 1em;
+    background-color: #61A5B2;
+    margin-top: -7em;
+}
+
+
+.lineboxicon {
+    margin-top: 2em;
+    width: 40em;
+    height: 10em;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+}
+
+.lineboxicon img{
+    margin-top: 0em;
+    justify-items: start;
+    justify-self: center;
+    transition: all 0.2s linear;
+}
+
+.lineboxicon img:hover{
+    transform: scale(2);
+    margin-top: -5em;
+    padding: 20%;
+}

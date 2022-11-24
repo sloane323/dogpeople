@@ -1,21 +1,22 @@
 
 import React from "react";
 import "./Css/Booking.css";
-import  { useState, useEffect, useRef } from 'react';
+import  { useState,  useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-
 const Booking = () => {
 
-  const {name,humNum,babyNum} = useState(false)
 
- 
      const [show, setShow] = useState(false);
  
-     const handleClose = () => setShow(false);
-     const handleShow = () => setShow(true);
-
+     const handleClose = () => {
+      setShow(false);
+    }
+     const handleShow = () => {
+      setShow(true)
+    }
+     ;
 
   const submit = (e) => {
     e.preventDefault();  //새로고침 방지
@@ -26,12 +27,10 @@ const Booking = () => {
       setusername(e.target.value);
     };
 
-
     const inputusername = useRef(null);
-
     const [username, setusername] = useState('');
     const selectList = 
-    ["01", "02", "03", "04", "05"];
+    ["1", "2", "3", "4", "5"];
     const [Selected, setSelected] = useState("");
     const handleSelect = (e) => {
       setSelected(e.target.value);
@@ -41,17 +40,13 @@ const Booking = () => {
         const {value} = e.target
         setPeriod(value)}
         const periodOptions = [
-          {value: "1", label:'01'},
-          {value: "2", label:'02'},
-          {value: "3", label:'03'},
-          {value: "4", label:'04'},
-          {value: "5", label:'05'},
-          {value: "6", label:'06'},
+          {value: "1", label:'1'},
+          {value: "2", label:'2'},
+          {value: "3", label:'3'},
+          {value: "4", label:'4'},
+          {value: "5", label:'5'},
+          {value: "6", label:'6'},
       ]
-
-
-
-
 
       const week = ["일", "월", "화", "수", "목", "금", "토"];
       const [tab, setTab] =
@@ -88,24 +83,66 @@ const Booking = () => {
         return array2;
       }
 
-
-
       const [timecheck, settimecheck] = useState();
       const onClick3 = (e,id) => {
-        console.log(e.currentTarget);
-        settimecheck(e.currentTarget.value);
+        console.log(e.currentTarget.firstChild);
+        settimecheck(e.currentTarget.firstChild.value);
         setOnly(id);
       };
-    
-
 
       const [onlys,setOnlys] = useState(); // 선택한 id값
       const [shotcheck, settshotcheck] = useState(); // 값을 읽어옴 
       const onClicks = (e,id) => {
-        console.log(e.currentTarget);
+        console.log(e.currentTarget.value);
         settshotcheck(e.currentTarget.value);
         setOnlys(id);
       };
+
+
+
+
+      const [blist, setblist] = useState([]);
+        const [bookingid, setBookingid] = useState(0);
+    
+    const submituu = (e) => {
+        e.preventDefault(); //새로고침 방지
+        handleClose(); 
+        const about_blist = blist.concat({ //원래 있는 리스트에 붙여주기
+          id: bookingid,
+        name: {username},
+        hum:  {Selected},
+        dog: {period},
+        date: {timecheck},
+        time: {shotcheck},
+
+        });
+       setBookingid(bookingid +20021); //id값 +1
+      
+        /*방금 붙여준 리스트까지 포함 된 리스트로 세팅하기*/
+        setblist(about_blist); 
+      };
+      
+    
+    
+       const input_blist = blist.map((blist) => (
+      <div className="rgyPostIts-book">
+   
+      <li>
+      <div className="rgyPostIt-booking">
+       예약이 완료 되었습니다.  <br></br> <div className="rgyPostIt-texts">
+       {username}님의 예약정보입니다.  예약번호 :  {bookingid} <br></br>
+       사람 {Selected}명, 강아지 {period}마리가  <br></br>
+       {timecheck},{shotcheck}에 예약 되었습니다. </div> </div>
+        </li>
+        </div>
+      ));
+    
+      const removebList = (id) => {
+        const about_blist = blist.filter((blist) => blist.id !== id);
+        setblist(about_blist);
+      };
+    
+
 
     return ( <div className="booking-all">      <br></br>
         <div>
@@ -154,32 +191,40 @@ const Booking = () => {
   
       </div>
 
-
-
-
             <button type="submit" className='ckeckreview2' onClick={handleShow} >예약하기</button>
       </form> 
 
       <Modal className='modal-booking'
      show={show} onHide={handleClose}>
 
+      {  username != "" && Selected != "" &&
+     period!=""&&  timecheck!= null && shotcheck!= null ? 
+
+        <div>
         <Modal.Body> 
-        <h2> 예약이 완료 되었습니다. </h2> 
+        <h2> 예약 정보를 확인해주세요  </h2> 
         <p>
          {username} 님, 안녕하세요  <br></br>
 
 
-         사람 : {Selected}명과 강아지 : {babyNum} 마리가   <br></br>
-        {timecheck}, {shotcheck} 에 함께하는 시티투어에 <br></br>
-        예약되었습니다.</p>
+         사람 : {Selected}명과 강아지 : {period}마리가   <br></br>
+        {timecheck}, {shotcheck} 에 함께하는 <br></br> 시티투어에 
+       예약 하시겠습니까? </p>
       
        </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            확인
-          </Button>
-        </Modal.Footer>
+        <button onClick={submituu} className="modalbut"> 예약 </button> 
+        &nbsp;
+          <button onClick={handleClose} className="modalbut"> 취소 </button>
+        </Modal.Footer> </div> : <Modal.Body > <div className= "modalbody-1">모든 정보를 입력해주세요 <br></br> 창을 클릭하면 사라집니다. </div> </Modal.Body> } 
       </Modal>  
+
+
+
+      <div className='bookinput'>
+      <ul>{input_blist}</ul> </div>
+
+
 
     </div> );
 }
