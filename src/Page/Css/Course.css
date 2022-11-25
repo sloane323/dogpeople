@@ -1,42 +1,233 @@
 .Course-footbox{
     display: flex;
     height: 200em;
-}
 
+}
 
 .linebox-w {
     text-align: center;
     display: inline-block;
+    font-family: 'GmarketSansMedium';
 
 }
 
+.linebox0 {
+    width:80em;
+    height: 0.5em;
+    background-color: gray;
+    margin-top: 0.7em;
+}
+
+
 .linebox {
-    width:40em;
-    height: 1em;
-    background-color: #61A5B2;
-    margin-top: -7em;
+    width:20em;
+    height: 0.7em;
+    left: -10px;
+    right:0;
+    background-color: #00aabb;
+    margin-top: -1.5em;
+    transition:all 0.5s;
+    transform:translate(20px, 70px);
+
+}
+
+.linebox:active{
+    font-size:2rem;
+  }
+
+
+
+.box_12 {
+    width: 5em;
+    height: 5em; 
+    border-radius: 70%; 
+    background-color: #00aabb;
+    display: inline-flex;
+    left: 10px;
+    right: 10em;
+    margin-top: -6em;
+}
+
+.box_13 {
+    width: 5em;
+    height: 5em; 
+    border-radius: 70%; 
+    background-color: #00aabb;
+    display: inline-flex;
+    left: 10px;
+    right: 10em;
+    margin-top: -6em;
+}
+
+.box_14 {
+    width: 5em;
+    height: 5em; 
+    border-radius: 70%; 
+    background-color: #00aabb;
+    display: inline-flex;
+    left: 10px;
+    right: 10em;
+    margin-top: -3em;
+}
+
+.box_15 {
+    width: 5em;
+    height: 5em; 
+    border-radius: 70%; 
+    background-color: #00aabb;
+    display: inline-flex;
+    left: 10px;
+    right: 10em;
+    margin-top: -3em;
+}
+
+
+.linebox2 {
+    width:18em;
+    height: 0.7em;
+    background-color: #00aabb;
+    margin-top: -1.5em;
+}
+
+
+.linebox3 {
+    width:18em;
+    height: 0.7em;
+    background-color: #00aabb;
+    margin-top: -1.5em;
+}
+
+
+.linebox4 {
+    width:18em;
+    height: 0.7em;
+    background-color: #00aabb;
+    margin-top: -1.5em;
 }
 
 
 .lineboxicon {
     margin-top: 2em;
-    width: 40em;
+    width: 80em;
     height: 10em;
     justify-self: center;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
     justify-content: space-between;
 }
 
-.lineboxicon img{
-    margin-top: 0em;
-    justify-items: start;
-    justify-self: center;
-    transition: all 0.2s linear;
+.line1{
+text-align: center;
+justify-self: center;
+width: 10em;
 }
 
-.lineboxicon img:hover{
-    transform: scale(2);
-    margin-top: -5em;
-    padding: 20%;
+
+.box_1 {
+    width: 3em;
+    height: 3em; 
+    border-radius: 70%; 
+    background-color: gray;
+    display: flex;
+    margin: 0 auto;
+}
+
+.Locationicon{
+    position: relative;
+    width: 2em;
+    height: 2em; 
+    justify-self: center;
+    margin: auto;
+    color: white;
+}
+
+
+
+
+.box {
+    margin: auto;
+    width: 8em;
+    height: 8em; 
+    border-radius: 70%;
+    overflow: hidden;
+    background-image: url(https://fastly.4sqi.net/img/general/600x600/23178275_dunGz8CgYG_jLT2U9uGMpEKXuU4zezU7IJTuva7_J0Y.jpg);
+    background-size: 180px;
+    vertical-align:middle;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+
+
+.box2{
+    margin: auto;
+    width: 8em;
+    height: 8em; 
+    border-radius: 70%;
+    overflow: hidden;
+    background-image: url(https://www.bukhangbr.com/images/index/M_visual_01.jpg);
+    background-size: 180px;
+    vertical-align:middle;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+
+.box3{
+    margin: auto;
+    width: 8em;
+    height: 8em; 
+    border-radius: 70%;
+    overflow: hidden;
+    background-image: url(https://www.visitbusan.net/uploadImgs/files/cntnts/20191229160828011_wufrotr);
+    background-size: 220px;
+    vertical-align:middle;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+
+
+.box4{
+    margin: auto;
+    width: 8em;
+    height: 8em; 
+    border-radius: 70%;
+    overflow: hidden;
+    background-image: url(https://dimg.donga.com/ugc/CDB/SHINDONGA/Article/61/b0/68/2f/61b0682f1ce9d2738276.jpg);
+    background-size: 220px;
+    vertical-align:middle;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+
+
+
+.ballon {
+	position: relative;
+	background: #00aabb;
+	border-radius: .4em;
+    transition: all 0.2s ease-in;
+    padding: 1em;
+}
+
+
+.ballon:after {
+    content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 19px solid transparent;
+	border-bottom-color: #00aabb;
+	border-top: 0;
+	margin-left: -19px;
+	margin-top: -19px;
+}
+
+
+.footerspace {
+    height: 50em;
 }
