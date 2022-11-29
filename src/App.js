@@ -9,6 +9,8 @@ import Review from './Page/Review';
 import Header from './Page/Header';
 import Footer from './Page/Footer';
 import Place from './Page/Place';
+import Dogway from './Page/Dogway';
+import School from './Page/School';
 
 
 
@@ -26,6 +28,8 @@ function App() {
           <Route path='/place' element={<Place />} />
           <Route path='/booking' element={<Booking />}> </Route>
           <Route path='/review' element={<Review />}> </Route>
+          <Route path='/dogway' element={<Dogway />}> </Route>
+          <Route path='/school' element={<School />}> </Route>
       </Routes> 
 
     <Footer />

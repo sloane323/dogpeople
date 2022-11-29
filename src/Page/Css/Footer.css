@@ -27,7 +27,6 @@
 }
 
 .f_logo-dog {
-    font-family: 'Pacifico', cursive;
     font-size: 8vmin;
     color: white;
 
@@ -48,6 +47,14 @@
 
     margin-left: 50vmin;
     padding-top: 4vmin;
+}
+
+
+.f_con_T p{
+    font-size: 2vmin;
+    text-align: left;
+    color: white;
+    font-family: 'GmarketSansMedium';
 }
 
 .footerimg {

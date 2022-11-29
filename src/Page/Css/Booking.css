@@ -1,6 +1,8 @@
 .booking-all {
     font-family: 'GmarketSansMedium';
     font-size: 3vmax;
+    position: relative;
+    top: 0px;
 }
 
 .title-date{

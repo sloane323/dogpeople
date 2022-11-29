@@ -29,13 +29,17 @@ const Booking = () => {
 
     const inputusername = useRef(null);
     const [username, setusername] = useState('');
-    const selectList = 
+
+    const selectList =  // 사람선택 
     ["1", "2", "3", "4", "5"];
+
     const [Selected, setSelected] = useState("");
     const handleSelect = (e) => {
       setSelected(e.target.value);
     };
-    const [period, setPeriod] = useState("1")
+
+
+    const [period, setPeriod] = useState("1") // 강아지 선택 
     const onPeriodChange = (e) => {
         const {value} = e.target
         setPeriod(value)}
@@ -92,6 +96,7 @@ const Booking = () => {
 
       const [onlys,setOnlys] = useState(); // 선택한 id값
       const [shotcheck, settshotcheck] = useState(); // 값을 읽어옴 
+      
       const onClicks = (e,id) => {
         console.log(e.currentTarget.value);
         settshotcheck(e.currentTarget.value);
@@ -144,7 +149,7 @@ const Booking = () => {
     
 
 
-    return ( <div className="booking-all">      <br></br>
+    return ( <div className="booking-all">       <br></br>
         <div>
       <span  className="sub-title">Booking  예약하기</span> </div>
      <br></br><br></br>

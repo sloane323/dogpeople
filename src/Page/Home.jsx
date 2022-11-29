@@ -6,12 +6,21 @@ import backing from '../img/newido.png';
 import page2bac from '../img/main_s1.png';
 import page3bac from '../img/main_s2.png';
 import Mainphotos from "../Componment/Mainphotos";
-
+import Logo from "../Componment/Logo";
+import { useNavigate } from "react-router-dom";
 
 
 const Home = () => {
 
+   const navigate = useNavigate();
+
+   const godogway = () => {
+      navigate("/dogway");
+    };
   
+    const doschool = () => {
+      navigate("/school");
+    };
 
     return (<div className="mainebig">
          <img src={backing} alt={`loading2`} className="backing"/>
@@ -35,7 +44,9 @@ const Home = () => {
         <p><h2><b>  7가지 방법 </b> </h2></p>
            <p> 설채현 수의사가 알려주는 교감 방법  </p>
            <p> 강의 후 개별 포토 타임 진행   </p>
-           <div> <button> 상세보기 </button></div>
+           <div> 
+           <button type="submit" className='ckeckreview2' onClick={godogway} >  상세보기</button>
+           </div>
            </div>
           
         </div>
@@ -51,7 +62,7 @@ const Home = () => {
         <p><h1><b> 우리 같이 학교가자  </b> </h1></p>
            <p> 이웃갈등을 예방하고 행복한 생활을 위하여 </p>
            <p> 사회화ㆍ예절교육, 행동교정교육 </p>
-           <div> <button> 상세보기 </button></div>
+           <div>  <button type="submit" className='ckeckreview2' onClick={doschool}  >상세보기</button> </div>
            </div>
         </div>
 

@@ -1,0 +1,24 @@
+.busanmap{
+    width: 50em;
+}
+
+.text-boxb {
+    padding:20px;
+}
+
+  .text-box {
+    display: flex;
+    margin: 30px;
+  }
+
+  .styletab {
+    overflow: scroll;
+    width: 100%;
+    font-family: "GmarketSansMedium";
+  }
+
+  .placemain {
+    font-family: 'GmarketSansMedium';
+    font-size: 2vmin;
+
+  }

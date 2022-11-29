@@ -4,6 +4,7 @@ import "./Css/Course.css";
 import placeicon from '../img/placeicon.png';
 import { MdGpsNotFixed } from "react-icons/md"; 
 import { MdFmdGood } from "react-icons/md"; 
+import { Motion, spring } from "react-motion";
 
 const Course = () => {
     const [visible, setVisible] = useState(false);
@@ -11,14 +12,14 @@ const Course = () => {
     const [visible3, setVisible3] = useState(false);
     const [visible4, setVisible4] = useState(false);
 
-    return ( <div>
-        <br></br><br></br> <br></br><br></br>
-   <div>
+    return ( <div className="cos-ti">
+   <div><br></br><br></br><br></br><br></br>
     <span  className="sub-title">Course 
      코스 안내 </span> </div>
      <br></br><br></br>     <br></br><br></br>
-
-        <h1> 레드라인 특별코스</h1><br></br><br></br>
+        <div className="coursetext">
+        <h1> 레드라인 특별코스</h1>
+        <p>부산의 명소들을 편리하게 연결하는 관광 대중교통입니다.</p></div> 
         <div className="linebox-w">   <br></br>
 
       
@@ -28,6 +29,7 @@ const Course = () => {
     <div  className="line1" onClick={() => {setVisible(!visible);}} > 
     <h1> 01 <br></br>부산역 </h1> <br></br>
     <div className="box_1"> <MdFmdGood className="Locationicon" /> </div>
+   
     {visible ? 
 
         <div  className="showmenu">
@@ -37,10 +39,7 @@ const Course = () => {
         
         <div className="ballon">
 
-        출발
-        승차장소 : 부산역 광장 라마다앙코르호텔 앞<br></br>
-        승강장 주소 : 부산광역시 동구 초량동 1202<br></br>
-        지하철 : 1호선/부산역<br></br>
+        부산역은 서울과 부산을 잇는 철도인 경부선의 종점이다. 기차뿐만 아니라 버스, 지하철, 택시 등을 이용할 수 있는 부산 교통의 중심지 역할을 한다. 총 3층 규모의 역으로 여행자들을 위한 편의시설까지 잘 갖추고 있다.<br></br>
          </div>  </div>
      :  ""}
      </div>
@@ -55,8 +54,7 @@ const Course = () => {
     {visible2 ? 
     
         <div  className="showmenu">
-        <div className="linebox2">  </div> <br></br>
-        <div className="boxb"> <div className="box_13"></div> <div className="box2"/> </div> 
+        <div className="boxb">  <div className="box2"/> </div> 
 
         <div className="ballon">
 
@@ -78,8 +76,8 @@ const Course = () => {
 
     {visible3 ? 
         <div  className="showmenu">
-        <div className="linebox3">  </div>
-        <div className="boxb"> <div className="box_14"></div> <div className="box3"/> </div> 
+    
+        <div className="boxb">  <div className="box3"/> </div> 
 
         <div className="ballon">
 
@@ -102,8 +100,8 @@ const Course = () => {
 
     {visible4 ? 
         <div  className="showmenu">
-        <div className="linebox4">  </div>
-        <div className="boxb"><div className="box_15"></div> <div className="box4"/> </div> 
+      
+        <div className="boxb"> <div className="box4"/> </div> 
         
         <div className="ballon">
 

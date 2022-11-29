@@ -1,6 +1,7 @@
 
 import Logo from '../Componment/Logo';
 import Sideicon from '../Componment/Side';
+import "./Css/Header.css";
 
 const Header = () => {
     return ( 

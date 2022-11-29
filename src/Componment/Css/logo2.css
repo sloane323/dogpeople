@@ -7,15 +7,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@800&family=Pacifico&display=swap');
 
-.logo-W1 {
+.logo-W {
     font-family: 'Maven Pro', sans-serif;
     font-size: 4vmin;
 
 }
-.logo-dog1 {
+.logo-dog {
     font-family: 'Pacifico', cursive;
     font-size: 8vmin;
-    color: #61A5B2;
+    color: white;
 }
 
 .logo-n {

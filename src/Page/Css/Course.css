@@ -12,103 +12,28 @@
 }
 
 .linebox0 {
-    width:80em;
+    width:100%;
     height: 0.5em;
     background-color: gray;
     margin-top: 0.7em;
 }
 
-
-.linebox {
-    width:20em;
-    height: 0.7em;
-    left: -10px;
-    right:0;
-    background-color: #00aabb;
-    margin-top: -1.5em;
-    transition:all 0.5s;
-    transform:translate(20px, 70px);
-
+.coursetext{
+    font-family: 'GmarketSansMedium';
 }
 
-.linebox:active{
-    font-size:2rem;
+ 
+.linebox {
+    position: relative;
   }
 
 
 
-.box_12 {
-    width: 5em;
-    height: 5em; 
-    border-radius: 70%; 
-    background-color: #00aabb;
-    display: inline-flex;
-    left: 10px;
-    right: 10em;
-    margin-top: -6em;
-}
-
-.box_13 {
-    width: 5em;
-    height: 5em; 
-    border-radius: 70%; 
-    background-color: #00aabb;
-    display: inline-flex;
-    left: 10px;
-    right: 10em;
-    margin-top: -6em;
-}
-
-.box_14 {
-    width: 5em;
-    height: 5em; 
-    border-radius: 70%; 
-    background-color: #00aabb;
-    display: inline-flex;
-    left: 10px;
-    right: 10em;
-    margin-top: -3em;
-}
-
-.box_15 {
-    width: 5em;
-    height: 5em; 
-    border-radius: 70%; 
-    background-color: #00aabb;
-    display: inline-flex;
-    left: 10px;
-    right: 10em;
-    margin-top: -3em;
-}
-
-
-.linebox2 {
-    width:18em;
-    height: 0.7em;
-    background-color: #00aabb;
-    margin-top: -1.5em;
-}
-
-
-.linebox3 {
-    width:18em;
-    height: 0.7em;
-    background-color: #00aabb;
-    margin-top: -1.5em;
-}
-
-
-.linebox4 {
-    width:18em;
-    height: 0.7em;
-    background-color: #00aabb;
-    margin-top: -1.5em;
-}
 
 
 .lineboxicon {
     margin-top: 2em;
-    width: 80em;
+    width: 100%;
     height: 10em;
     justify-self: center;
     display: grid;
@@ -119,9 +44,17 @@
 .line1{
 text-align: center;
 justify-self: center;
-width: 10em;
+width: 80%;
 }
 
+.cos-ti {
+    position: relative;
+    top: 0px;
+}
+.placemainT {
+        position: relative;
+        top: 00px;
+}
 
 .box_1 {
     width: 3em;
@@ -132,6 +65,15 @@ width: 10em;
     margin: 0 auto;
 }
 
+
+.box_1 :hover{
+    background-color:#00aabb;
+    width: 3em;
+    height: 3em; 
+    border-radius: 80%; 
+    }
+
+    
 .Locationicon{
     position: relative;
     width: 2em;
@@ -140,6 +82,8 @@ width: 10em;
     margin: auto;
     color: white;
 }
+
+
 
 
 
@@ -207,9 +151,11 @@ width: 10em;
 .ballon {
 	position: relative;
 	background: #00aabb;
-	border-radius: .4em;
+	border-radius: 1em;
     transition: all 0.2s ease-in;
     padding: 1em;
+    color: white;
+    font-size: small;
 }
 
 
@@ -218,7 +164,7 @@ width: 10em;
 	position: absolute;
 	top: 0;
 	left: 50%;
-	width: 0;
+	width: 20;
 	height: 0;
 	border: 19px solid transparent;
 	border-bottom-color: #00aabb;

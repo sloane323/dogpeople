@@ -1,0 +1,12 @@
+.home-header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: space-between;
+}
+
+.home-Sideicon {
+    justify-self: end; 
+    position: relative;
+    top: 15px;
+    right:10px;
+}
