@@ -11,13 +11,31 @@ import Footer from './Page/Footer';
 import Place from './Page/Place';
 import Dogway from './Page/Dogway';
 import School from './Page/School';
+import Register from './Page/Register';
+import Login from './Page/Login';
+import Glogin from './Page/Glogin';
 
-
+import './Database/firebase';
+import User from './Page/User';
+import Parents from './Page/Parents';
+import Child from './Page/Btn';
 
 function App() {
   return (
     <div className="App">
       < Header />
+
+
+
+       <Routes> 
+          <Route path='/register' element={<Register />}> </Route>
+          <Route path='/login' element={<Login />}> </Route>
+          <Route path='/glogin' element={<Glogin />}> </Route>
+          <Route path='/user' element={<User />}> </Route>
+
+          <Route path='/parents' element={<Parents />}> </Route>
+          <Route path='/child' element={<Child />} > </Route>
+          </Routes> 
 
       <Routes> 
           <Route path='/' element={<Home />}> </Route>

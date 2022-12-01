@@ -59,8 +59,8 @@ const Home = () => {
         <img src={page3bac} alt={`page3`} className="page3bac"/>
         <div className="main3page-text">
          <p>반려동물시민학교</p>
-        <p><h1><b> 우리 같이 학교가자  </b> </h1></p>
-           <p> 이웃갈등을 예방하고 행복한 생활을 위하여 </p>
+        <p><h1><b> 우리 학교가자  </b> </h1></p>
+           <p> 이웃갈등을 예방하고 </p><p> 행복한 생활을 위하여 </p>
            <p> 사회화ㆍ예절교육, 행동교정교육 </p>
            <div>  <button type="submit" className='ckeckreview2' onClick={doschool}  >상세보기</button> </div>
            </div>

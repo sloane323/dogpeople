@@ -2,7 +2,24 @@ import "./Css/Info.css";
 import phto from '../img/pht.png';
 import bags from '../img/bags.gif';
 import { Link, Outlet } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
+
+
 const Info = () => {
+
+    
+   const navigate = useNavigate();
+
+   const gocos = () => {
+      navigate("/info/course");
+    };
+  
+    const goplc = () => {
+      navigate("/info/place");
+    };
+
+
     return ( <div>
 <br></br><br></br>
 
@@ -44,8 +61,8 @@ const Info = () => {
 <div className="info-footbox"></div>
 <div> 
 
-<button> <Link to='/info/course' > 코스로보기     </Link> </button>
-<button>  <Link to='/info//place'>  장소로보기     </Link> </button>
+<button className="ckeckreview2" onClick={gocos}>  코스로보기  </button>
+<button className="ckeckreview2" onClick={goplc}>   장소로보기  </button>
 
 </div>
 <Outlet />

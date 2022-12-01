@@ -13,6 +13,7 @@ import { BiMap } from "react-icons/bi";
 import { BiMapAlt } from "react-icons/bi";
 import { BiMessageCheck } from "react-icons/bi";
 import { BiMessageRoundedDots } from "react-icons/bi";
+import { BiInfoCircle } from "react-icons/bi";
 
 import "./Css/Side.css";
 import { NavLink } from 'react-router-dom';
@@ -45,6 +46,14 @@ const Sideicon = () => {
 
 
       <Divider/>
+      <List>
+          <ListItem> 
+            <ListItemButton> <BiInfoCircle />  &nbsp;
+              <NavLink to="/info" style={{ textDecoration: "none", color:"black", fontFamily: "GmarketSansMedium"}} >Info<br></br></NavLink>
+            </ListItemButton>
+          </ListItem>
+      </List>
+
 
       <List>
           <ListItem> 
@@ -81,6 +90,25 @@ const Sideicon = () => {
           </ListItem>
       </List>
 
+<hr/>
+
+<List>
+          <ListItem>
+            <ListItemButton> 
+              <BiMessageRoundedDots />&nbsp; 
+              <NavLink  to="/login" style={{ textDecoration: "none", color:"black", fontFamily: "GmarketSansMedium"}} >로그인<br></br></NavLink>
+            </ListItemButton>
+          </ListItem>
+      </List>
+
+      <List>
+          <ListItem>
+            <ListItemButton> 
+              <BiMessageRoundedDots />&nbsp; 
+              <NavLink  to="/register" style={{ textDecoration: "none", color:"black", fontFamily: "GmarketSansMedium"}} >가입하기<br></br></NavLink>
+            </ListItemButton>
+          </ListItem>
+      </List>
   
     </Box>
   );
