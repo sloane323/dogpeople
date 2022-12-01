@@ -30,8 +30,25 @@ const onReset = () => {
     })
 }
 
+
+const submit = (e) => {
+  e.preventDefault();  //새로고침 방지
+  const about_lists = lists.concat({ //원래 있는 리스트에 붙여주기
+    id: nextId,
+
+    name: name,
+    nickname:nickname,
+    password:password,
+    phone:phone
+
+  });
+  setNextId(nextId + 1); //id값 +1
+
+ 
+};
+
     return ( <div> <br /><br /><br /><br /><br />
- <div>
+ <div> <form onSubmit={submit}>
             <input name = "name" 
               placeholder="이름" 
               onChange={onChange} 
@@ -56,7 +73,9 @@ const onReset = () => {
 
 
             <button onClick={onReset}>초기화</button>
+            <button type="submit">초기화</button>
 
+            </form>
             <div>
             
            아이디  {name}   <br /> 
