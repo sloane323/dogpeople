@@ -10,6 +10,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { collection } from "firebase/firestore";
 import { db } from "../Database/firebase";
 import { doc, setDoc, addDoc } from "firebase/firestore";
+import { Navigate } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -143,7 +144,7 @@ const Register = () => {
       password: password,
       phone: phone,
     });
-    navigate("/login");
+    Navigate("/");
   };
 
   return (
