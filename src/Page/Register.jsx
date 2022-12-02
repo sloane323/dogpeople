@@ -143,6 +143,7 @@ const Register = () => {
       password: password,
       phone: phone,
     });
+    navigate("/login");
   };
 
   return (
@@ -285,7 +286,8 @@ const Register = () => {
         <br></br>
         <br></br>
         <button type="submit" onClick={addUserData2}
-        disabled={!(!error.phoneError && !error.passwordError && !error.ConfirmPasswordError && !error.userNameError && !error.emailError)}
+        disabled={!(!error.phoneError && !error.passwordError && !error.ConfirmPasswordError && !error.userNameError && 
+          !error.emailError)}
         > 회원가입 </button>
         <br></br>{" "}
       </form>
