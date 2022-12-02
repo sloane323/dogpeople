@@ -1,8 +1,8 @@
 import { collection, query, where, getDocs, orderBy} from "firebase/firestore"
-import { getFirestore } from 'firebase/firestore/lite';
+import { Firestore, getFirestore } from 'firebase/firestore/lite';
 import { useEffect } from "react";
 import {db} from '../Database/firebase'
-import { doc, setDoc ,updateDoc, arrayUnion, arrayRemove  } from "firebase/firestore"; 
+import { doc, setDoc ,updateDoc, arrayUnion, arrayRemove ,addDoc   } from "firebase/firestore"; 
 import { useState } from "react";
 
 
@@ -13,7 +13,7 @@ const Glogin = () => {
    const  getUserData  = async() => {
     let array = [];
     try {
-      const q = query(collection(db, "User"), ); //where("Uerid", "==", 14 )
+      const q = query(collection(db, "Register"), ); //where("Uerid", "==", 14 )
       const querySnapshot = await getDocs(q);
      
       querySnapshot.forEach((doc) => {
@@ -41,39 +41,16 @@ const [idValue, setidValue] = useState();
 
   
   const  addUserData  = async() => { i++;
-await setDoc(doc(db, "User", "Register1"), 
-{
-    Uerid : idValue +1,
-    email: "Los Angeles",
-    nickname: "CA",
-    password: "USA",
-    phone: "000000000"
+await addDoc(collection(db, "Register"),{
 
-  } );
+   Uerid : idValue +1,
+    email: "yof@gfkfsdfadsf",
+    nickname: "키미",
+    password: "US렁ㄴㅁA",
+    phone: "232450" 
 
-  };
-
-
-// 중첩 개체의 필드 업데이트
-
-const frankDocRef = doc(db, "User" ,"Register");
-const  addUser  = async() => { 
-  await setDoc(frankDocRef, {
-
-    Uerid : i,
-    email: "Korea",
-    nickname: "Busan",
-    password: "Southkorea",
-    phone: "00000fds0000"
 }); }
-
-// To update age and favorite color:
-const  updateUser  = async() => { 
-await updateDoc(frankDocRef, {
-    "age": 13,
-    "favorites.color": "Red"
-}); } 
-
+  
 
 
 
@@ -83,14 +60,13 @@ await updateDoc(frankDocRef, {
 
       <button onClick={getUserData} > 가입하기 </button>
       <button onClick={addUserData} > addUserData 가입하기 </button>
-      <button > frankDocRef 가입하기 </button>
+
  
 
   <div className="App">
       firebase 확인해보기!
     </div>
 
-    
 
     </div>
   );

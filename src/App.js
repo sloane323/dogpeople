@@ -19,6 +19,7 @@ import './Database/firebase';
 import User from './Page/User';
 import Parents from './Page/Parents';
 import Child from './Page/Btn';
+import {firestore} from "./Database/firebase";
 
 function App() {
   return (

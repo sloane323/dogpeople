@@ -27,6 +27,7 @@ const Review = () => {
     const inputusername = useRef(null);
     const inputnote = useRef(null);
   
+    
   
   /* input값에 문자 입력할 때 마다 실행 되는 이벤트 함수*/
   const onChange = (e) => {
