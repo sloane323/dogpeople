@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/dogpeople/static/css/main.a31e2ba7.css",
+    "main.js": "/dogpeople/static/js/main.f3fda2c8.js",
+    "static/js/787.45fcf0d0.chunk.js": "/dogpeople/static/js/787.45fcf0d0.chunk.js",
+    "static/media/main_01.jpg": "/dogpeople/static/media/main_01.075b64f8de32d8ea37d0.jpg",
+    "static/media/mainph06.jpg": "/dogpeople/static/media/mainph06.6a651dcf1ae893ca5e3e.jpg",
+    "static/media/main_04.jpg": "/dogpeople/static/media/main_04.ebcc5c4baf799c6a9f5e.jpg",
+    "static/media/mainph02.jpg": "/dogpeople/static/media/mainph02.3c90ab1bb83f1808f724.jpg",
+    "static/media/main_02.jpg": "/dogpeople/static/media/main_02.ab22a1ca0083b432215e.jpg",
+    "static/media/mainph08.jpg": "/dogpeople/static/media/mainph08.8ffe1388a9520f4ee780.jpg",
+    "static/media/mainph01.jpg": "/dogpeople/static/media/mainph01.3e833900749d5746b49f.jpg",
+    "static/media/play.jpg": "/dogpeople/static/media/play.59cffd9968b48496ed57.jpg",
+    "static/media/mainph03.jpg": "/dogpeople/static/media/mainph03.bf233c5b9f4c53bf5dbe.jpg",
+    "static/media/main_03.jpg": "/dogpeople/static/media/main_03.6ba8a40b961faa3201bc.jpg",
+    "static/media/mainph05.jpg": "/dogpeople/static/media/mainph05.6ba8a40b961faa3201bc.jpg",
+    "static/media/mainph04.jpg": "/dogpeople/static/media/mainph04.631e1c4908aa0734fc8b.jpg",
+    "static/media/newido.png": "/dogpeople/static/media/newido.7db67b552183f5086ac1.png",
+    "static/media/main_s2.png": "/dogpeople/static/media/main_s2.e81bfad050716c120492.png",
+    "static/media/main_s1.png": "/dogpeople/static/media/main_s1.4d93711eedac88c6acb9.png",
+    "static/media/main1.png": "/dogpeople/static/media/main1.f2f8bcd0963f60f5a39d.png",
+    "static/media/logo.svg": "/dogpeople/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/slick.svg": "/dogpeople/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/dogpeople/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/dogpeople/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/dogpeople/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/dogpeople/index.html",
+    "main.a31e2ba7.css.map": "/dogpeople/static/css/main.a31e2ba7.css.map",
+    "main.f3fda2c8.js.map": "/dogpeople/static/js/main.f3fda2c8.js.map",
+    "787.45fcf0d0.chunk.js.map": "/dogpeople/static/js/787.45fcf0d0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a31e2ba7.css",
+    "static/js/main.f3fda2c8.js"
+  ]
+}
