@@ -5,9 +5,6 @@
     font-style: normal;
 }
 
-.mainebig{
-
-}
 
 .home-logo {
 position: relative;
@@ -108,3 +105,110 @@ top: 2vmin;
     height: 55em;
 }
 
+@media (max-width: 768px) {
+
+    .home-logo {
+        position: relative;
+        top: 2vmin;
+         text-align: left;
+         margin-left: 6vmin;
+        }
+        
+        .home-Sideicon{
+            z-index: 1;
+        }
+        
+        .maintitle{
+            position: relative;
+            top: 6rem;
+            font-family: 'GmarketSansMedium';
+            font-size: 2vmax;
+        
+            text-shadow:
+            3px 3px 0 white,
+            0px -1px 0 white,  
+           1px -1px 0 white,
+           -1px 1px 0 white,
+            1px 1px 0 white;
+        }
+        
+        .mainimgdog {
+            position: relative;
+            left: -70vw;
+            width: 20em;
+            z-index: -1;
+        }
+        
+        .backing {
+            position: absolute;
+            top: -2rem;
+            right: 4rem;
+            width: 30vw;
+            z-index: -1;
+            transform:rotate(20deg)
+        }
+        
+        .main2page{
+            position: relative;
+            background-image: url(/src/img/main_01.jpg);
+            background-size: 70rem;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: top left;
+        
+        }
+        
+        .page2bac{
+            width: 100%;
+        
+        }
+        .main2page-text{
+            font-family: 'GmarketSansMedium';
+            position: absolute;
+            top:10%;
+            text-align: left;
+            margin-left: 3rem;
+            height: 50%;
+            width: 50%;
+            font-size: 2vmax;
+            line-height: 2vmax;
+        }
+        
+        .main25page {
+            height: 100px;
+            position: relative;
+            top: -10px;
+            background-color: white;
+        }
+        .main3page {
+            margin-top: -10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .page3bac{
+            width: 100%;
+            background-image: url(/src/img/play.jpg);
+            background-size: 80rem;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: bottom left;
+        }
+        
+        .main3page-text{
+            font-family: 'GmarketSansMedium';
+            font-size: medium;
+            text-align: right;
+            padding-right: 5vmax;
+            padding-top: 1vmax;
+            line-height: 2vmax;
+        }
+        
+        .main4page{
+            overflow: hidden;
+            height: 55em;
+        }
+
+
+
+
+  }

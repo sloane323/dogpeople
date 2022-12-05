@@ -62,6 +62,33 @@
     height: 15em;
     margin-top: 9vmin;
     left:180vmin;
-    
+}
 
+@media (max-width: 768px) { 
+    .f_con_T{
+        position: absolute;
+        font-family: 'Maven Pro', sans-serif;
+        font-size: 20px;
+        text-align: left;
+        color: white;
+    
+        margin-left: 50vmin;
+        padding-top: 0vmin;
+    }
+    
+    
+    .f_con_T p{
+        font-size: 18px;
+        text-align: left;
+        color: white;
+        font-family: 'GmarketSansMedium';
+    }
+
+    .footerimg {
+        position: absolute;
+        height: 8em;
+        margin-top: 25vmin;
+        left:10vmin;
+    }
+    
 }

@@ -3,7 +3,7 @@ import "./Css/dogway.css";
 
 const School = () => {
 
-
+const uid = Math.random().toString(36).substring(2, 12);
      
 
     return ( <div className="schoolbig">
@@ -16,7 +16,7 @@ const School = () => {
 <br></br>
 <button type="submit" className='ckeckreview2' onClick={() => window.open('https://busanani.modoo.at/', '_blank')} >  바로가기 </button>
 
-
+{uid}
    
 <br></br><br></br>
     </div> );

@@ -22,3 +22,29 @@
     font-size: 2vmin;
 
   }
+
+  @media (max-width: 768px) { .busanmap{
+    width: 100%;
+}
+
+.text-boxb {
+    padding:3px;
+}
+
+  .text-box {
+    display: flex;
+    margin-top:  1px;
+  }
+
+  .styletab {
+    overflow: scroll;
+    width: 100%;
+    font-family: "GmarketSansMedium";
+    margin: -10px;
+  }
+
+  .placemain {
+    font-family: 'GmarketSansMedium';
+    font-size: 1vmin;
+
+  }}

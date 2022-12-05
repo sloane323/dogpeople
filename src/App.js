@@ -29,8 +29,8 @@ function App() {
 
 
        <Routes> 
-          <Route path='/register' element={<Register />}> </Route>
-          <Route path='/login' element={<Login />}> </Route>
+          
+          
           <Route path='/glogin' element={<Glogin />}> </Route>
           <Route path='/user' element={<User />}> </Route>
 
@@ -49,6 +49,8 @@ function App() {
           <Route path='/review' element={<Review />}> </Route>
           <Route path='/dogway' element={<Dogway />}> </Route>
           <Route path='/school' element={<School />}> </Route>
+          <Route path='/register' element={<Register />}> </Route>
+          <Route path='/login' element={<Login />}> </Route>
       </Routes> 
 
     <Footer />

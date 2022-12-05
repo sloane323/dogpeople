@@ -65,7 +65,7 @@ const Place = () => {
 <div className="text-box">
 
      <Box
-      sx={{ textAline:'left', flexGrow: 2,  display: 'flex', height: 400 , fontFamily: 'GmarketSansMedium' }}
+      sx={{ textAline:'left', flexGrow: 2,  display: 'flex', height: 600 , fontFamily: 'GmarketSansMedium' }}
     >
       <Tabs
         orientation="vertical"
@@ -73,7 +73,7 @@ const Place = () => {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider', width: '20em' }}
+        sx={{ borderRight: 1, borderColor: 'divider', width: '30em' }}
       >
         <Tab label="01 부산역" {...a11yProps(0)}   sx={{ fontFamily: 'GmarketSansMedium' }} />
         <Tab label="02 부산대교 부산항대교" {...a11yProps(1)} sx={{ fontFamily: 'GmarketSansMedium' }}/>
@@ -90,9 +90,9 @@ const Place = () => {
         <Tab label="13 광복로" {...a11yProps(12)}sx={{ fontFamily: 'GmarketSansMedium' }} />
       </Tabs>
 
-      <TabPanel value={value} index={0} className="styletab" > <p>
+      <TabPanel value={value} index={0} className="styletab"   sx={{ fontFamily: 'GmarketSansMedium' }}> 
       현재의 부산역사는 2004년 경부고속철도 개통에 맞추어 증·개축되어, 대지면적 21만 1,536㎡, 건축면적 3만 8,946㎡, 연면적 6만 1,880㎡이다. 지상 5층, 지하 1층에 철골 및 철근콘크리트 구조로 건축되었으며, 중앙집중식 냉난방 및 공조시설과 에스컬레이터 10대, 엘리베이터 11대가 설치되어 있다. 1만 6,457㎡의 선상주차장에는 승용차 기준으로 총 245대가 동시에 주차할 수 있다. 역을 중심으로 한 관광지로서는 범어사가 26km, 동래온천이 16km, 태종대가 11.4km, 송도가 5.4km, 해운대가 20.7km 지점에 있습니다.
-      </p> </TabPanel>
+      </TabPanel>
       <TabPanel value={value} index={1} style={{ fontFamily: 'GmarketSansMedium' }} className="styletab">
         부산대교는 1934년 준공된 영도대교와 더불어 영도와 육지를 연결하는 교통로이며, 조선공업단지 및 신흥항만으로 성장하는 영도지구의 물동량을 신속히 처리할 수 있는 산업도로 겸 임항도로로서의 기능을 발휘하고 있습니다.
       </TabPanel>

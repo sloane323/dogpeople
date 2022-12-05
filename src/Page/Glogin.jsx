@@ -44,10 +44,10 @@ const [idValue, setidValue] = useState();
 await addDoc(collection(db, "Register"),{
 
    Uerid : idValue +1,
-    email: "yof@gfkfsdfadsf",
-    nickname: "키미",
-    password: "US렁ㄴㅁA",
-    phone: "232450" 
+    email: "yㄹㄴㅇㄹ",
+    nickname: "키ㅇㄴㅁㄹ미",
+    password: "USㅁㄴㅇㄻ렁ㄴㅁA",
+    phone: "23ㅇㅁㄴㄹㄴㄹ2450" 
 
 }); }
   

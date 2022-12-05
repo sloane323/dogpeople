@@ -42,8 +42,8 @@ const Home = () => {
         <div className="main2page-text">
          <p>반려견과 행복하기 위한</p>
         <p><h2><b>  7가지 방법 </b> </h2></p>
-           <p> 설채현 수의사가 알려주는 교감 방법  </p>
-           <p> 강의 후 개별 포토 타임 진행   </p>
+           <p> 수의사가 알려주는 교감 방법  </p>
+           <p> 개별 포토 타임 진행   </p>
            <div> 
            <button type="submit" className='ckeckreview2' onClick={godogway} >  상세보기</button>
            </div>

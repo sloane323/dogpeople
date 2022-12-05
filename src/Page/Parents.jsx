@@ -1,10 +1,9 @@
 import React, {useState}from "react";
 import { collection} from "firebase/firestore"
-
 import {db} from '../Database/firebase'
 import { doc, setDoc,addDoc   } from "firebase/firestore"; 
 
-let i = 50142421;
+
 
 const Parents = () => {
 
@@ -61,12 +60,11 @@ const input_list = lists.map((list) => (
   </div>
 ));
 
-const [idValue, setidValue] = useState();
 
 // 데이터 추가하기
 
 
-const  addUserData2  = async() => { i++;
+const  addUserData2  = async() => { 
   await setDoc(doc (db, "Register",inputs.name),{
      Uerid : inputs.phone+inputs.password,
      email: inputs.name,
@@ -77,10 +75,9 @@ const  addUserData2  = async() => { i++;
    
  
 
- const  addUserData  = async() => { i++;
+ const  addUserData  = async() => { 
   await addDoc(collection (db, "Register"),{
   
-    Uerid : i,
      email: inputs.name,
      nickname: inputs.nickname,
      password: inputs.password,

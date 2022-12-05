@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import IconButton from "@mui/material/IconButton";
 import Input from "@mui/material/Input";
@@ -7,10 +6,9 @@ import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { collection } from "firebase/firestore";
 import { db } from "../Database/firebase";
-import { doc, setDoc, addDoc } from "firebase/firestore";
-import { Navigate } from "react-router-dom";
+import { doc, setDoc } from "firebase/firestore";
+import { Link, Navigate } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -31,6 +29,7 @@ const Register = () => {
     password: "",
     showPassword: false,
   });
+
 
   const onChangephone = (e) => {
     const phoneRegex = /^[0-9\b -]{0,13}$/;
@@ -122,7 +121,6 @@ const Register = () => {
 
   const submit = (e) => {
     e.preventDefault(); //새로고침 방지
-
     const about_lists = lists.concat({
       //원래 있는 리스트에 붙여주기
       id: nextId,
@@ -136,15 +134,16 @@ const Register = () => {
 
   };
 
+  const uid = Math.random().toString(36).substring(2, 12);
   const addUserData2 = async () => {
     await setDoc(doc(db, "Register", email), {
-      Uerid: email,
+      Uerid: {uid},
       email: email,
       username: username,
       password: password,
       phone: phone,
+      timestamp: new Date().toLocaleDateString()
     });
-    Navigate("/");
   };
 
   return (
@@ -287,9 +286,9 @@ const Register = () => {
         <br></br>
         <br></br>
         <button type="submit" onClick={addUserData2}
-        disabled={!(!error.phoneError && !error.passwordError && !error.ConfirmPasswordError && !error.userNameError && 
-          !error.emailError)}
-        > 회원가입 </button>
+        disabled={!(!null&&!error.emailError && !error.phoneError && !error.passwordError
+          && !error.ConfirmPasswordError && !error.userNameError  )}
+        >가입</button>
         <br></br>{" "}
       </form>
       <br />
@@ -297,10 +296,7 @@ const Register = () => {
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
+
     </div>
   );
 };

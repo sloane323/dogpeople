@@ -91,7 +91,7 @@ const Login = () => {
 
 
     return ( 
-    <div> <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div> <br /><br />
         <div>
 
 
@@ -151,7 +151,7 @@ const Login = () => {
 
 </div>
   </div>
-        <br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br />
     </div> 
     );
 }
