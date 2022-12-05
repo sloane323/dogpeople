@@ -134,8 +134,8 @@ top: 2vmin;
         
         .mainimgdog {
             position: relative;
-            left: -70vw;
-            width: 15em;
+            left: -120vw;
+            width: 7em;
             z-index: -1;
         }
         
