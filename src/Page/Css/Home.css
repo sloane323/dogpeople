@@ -151,8 +151,12 @@ top: 2vmin;
         
         .mainimgdog {
             position: relative;
+<<<<<<< HEAD
             left: -15vw;
             height: auto;
+=======
+            left: -200vw;
+>>>>>>> 1a35db6de0563da81b6072d6a17d83d2bd7554fe
             width: 200px;
             z-index: -1;
             margin-bottom: 10px;
