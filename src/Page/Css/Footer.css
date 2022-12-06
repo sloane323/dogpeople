@@ -41,7 +41,7 @@
 .f_con_T{
     position: absolute;
     font-family: 'Maven Pro', sans-serif;
-    font-size: 2vmin;
+    font-size: 13px;
     text-align: left;
     color: white;
 
@@ -51,7 +51,7 @@
 
 
 .f_con_T p{
-    font-size: 2vmin;
+    font-size: 10px;
     text-align: left;
     color: white;
     font-family: 'GmarketSansMedium';
@@ -72,13 +72,13 @@
         text-align: left;
         color: white;
     
-        margin-left: 50vmin;
+        margin-left: 57vmin;
         padding-top: 0vmin;
     }
     
     
     .f_con_T p{
-        font-size: 18px;
+        font-size: 10px;
         text-align: left;
         color: white;
         font-family: 'GmarketSansMedium';
@@ -88,7 +88,7 @@
         position: absolute;
         height: 8em;
         margin-top: 25vmin;
-        left:10vmin;
+        left:7vmin;
     }
     
 }

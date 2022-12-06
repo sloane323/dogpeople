@@ -35,6 +35,7 @@ top: 2vmin;
     position: relative;
     left: -40vw;
     z-index: -1;
+    top: -100px;
 }
 
 .backing {
@@ -105,6 +106,18 @@ top: 2vmin;
     height: 55em;
 }
 
+.main4page{
+    display:contents;
+    justify-content: center;
+     width: 90%;
+}
+
+
+.main4page2{
+    position:relative;
+
+}
+
 @media (max-width: 768px) {
 
     .home-logo {
@@ -116,6 +129,10 @@ top: 2vmin;
         
         .home-Sideicon{
             z-index: 1;
+        }
+
+        .dogphoto{
+            width: 300px;
         }
         
         .maintitle{
@@ -134,15 +151,18 @@ top: 2vmin;
         
         .mainimgdog {
             position: relative;
-            left: -120vw;
-            width: 7em;
+            left: -15vw;
+            height: auto;
+            width: 200px;
             z-index: -1;
+            margin-bottom: 10px;
         }
         
+
         .backing {
             position: absolute;
             top: -2rem;
-            right: 4rem;
+            right: 2rem;
             width: 30vw;
             z-index: -1;
             transform:rotate(20deg)
@@ -151,7 +171,7 @@ top: 2vmin;
         .main2page{
             position: relative;
             background-image: url(/src/img/main_01.jpg);
-            background-size: 70rem;
+            background-size: 50rem;
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-position: top left;
@@ -170,8 +190,8 @@ top: 2vmin;
             margin-left: 3rem;
             height: 50%;
             width: 50%;
-            font-size: 2vmax;
-            line-height: 2vmax;
+            font-size: 10px;
+            line-height: 9px;
         }
         
         .main25page {
@@ -196,19 +216,26 @@ top: 2vmin;
         
         .main3page-text{
             font-family: 'GmarketSansMedium';
-            font-size: medium;
+            font-size: 10px;
             text-align: right;
             padding-right: 5vmax;
             padding-top: 1vmax;
-            line-height: 2vmax;
+            line-height: 9px;
         }
         
         .main4page{
+            position:relative;
+            text-align: center;
             overflow: hidden;
-            height: 55em;
+             width: 90%;
+             height: 20em;
         }
 
 
+        .main4page2{
+            position:relative;
+            display : inline-block;
+        }
 
 
   }

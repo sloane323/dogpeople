@@ -32,7 +32,7 @@ const Home = () => {
         </div>
     
         <div className="mainimgdog">
-        <img src={loading} alt={`loading2`} />
+        <img src={loading} alt={`loading2`} className="dogphoto"/>
         </div> 
 
 
@@ -68,7 +68,7 @@ const Home = () => {
 
 
         <div className="main4page">
-        <Mainphotos />
+        <Mainphotos className="main4page2"/>
         </div>
 
        
