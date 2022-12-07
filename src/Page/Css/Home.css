@@ -151,12 +151,7 @@ top: 2vmin;
         
         .mainimgdog {
             position: relative;
-<<<<<<< HEAD
-            left: -15vw;
-            height: auto;
-=======
             left: -200vw;
->>>>>>> 1a35db6de0563da81b6072d6a17d83d2bd7554fe
             width: 200px;
             z-index: -1;
             margin-bottom: 10px;
@@ -177,7 +172,7 @@ top: 2vmin;
             background-image: url(/src/img/main_01.jpg);
             background-size: 50rem;
             background-attachment: fixed;
-            background-repeat: no-repeat;
+            background-repeat: repeat-y;
             background-position: top left;
         
         }
@@ -212,9 +207,8 @@ top: 2vmin;
         .page3bac{
             width: 100%;
             background-image: url(/src/img/play.jpg);
-            background-size: 80rem;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+            background-size: 70rem;
+                        background-repeat: repeat-y;
             background-position: bottom left;
         }
         

@@ -51,7 +51,7 @@
 
 
 .f_con_T p{
-    font-size: 10px;
+    font-size: 20px;
     text-align: left;
     color: white;
     font-family: 'GmarketSansMedium';
@@ -61,7 +61,7 @@
     position: absolute;
     height: 15em;
     margin-top: 9vmin;
-    left:180vmin;
+    left:130vmin;
 }
 
 @media (max-width: 768px) { 
