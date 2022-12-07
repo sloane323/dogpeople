@@ -21,6 +21,9 @@ import Parents from './Page/Parents';
 import Child from './Page/Btn';
 import {firestore} from "./Database/firebase";
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 function App() {
   return (
     <div className="App">
