@@ -1,2 +1,41 @@
 
+.imgdogsb{
+    text-align: center;
+
+}
+
+.imgdogs {
+    width: 95%;
+
+    position:relative;
+    display: inline-block;
+}
+
+.slc_A{
+    width: 20%;
+    height: 20%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+
+.slc_A img {
+position:relative;
+width: 100%;
+margin: 2px;
+text-align: center;
+}
+
+.hoverBox {
+    position: absolute; top:0; left: 0; width: 200px; height: 200px;
+}
+
+.hoverBox p.p1{text-align:center; font-size:18px;}
+.hoverBox p.p2{margin-top: 40px;}
+.slc_A .hoverBox
+{background: linear-gradient(to bottom, rgba(0,0,0,0) 5%,rgba(255,255,255,1) 90%); 
+    transform: translateY(60%); transition: 0.5s;}
+
+.slc_A :hover .hoverBox
+{transform: translateY(0);}
 

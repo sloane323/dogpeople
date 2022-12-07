@@ -4,7 +4,6 @@ import Slider from "react-slick";
 
 import "../Componment/Css/Mainphotos.css";
 
-
 import go1 from '../img/main_01.jpg';
 import go2 from '../img/main_02.jpg';
 import go3 from '../img/main_03.jpg';
@@ -50,12 +49,18 @@ const Mainphotos = ({ }) => {
           </div>
           <div>
             <h3>6</h3>
+
+  
+
           </div>
         </Slider>
       </div>
 
 
+
 <br></br>
+
+
     </div>);
 }
  
