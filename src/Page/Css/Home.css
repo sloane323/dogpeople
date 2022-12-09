@@ -132,7 +132,14 @@ top: 2vmin;
         }
 
         .dogphoto{
-            width: 300px;
+            position: relative;
+            display:flexbox;
+            width: 400px;
+            top:30px;
+            left: 10vw;
+            z-index: 1;
+            margin-bottom: 10px;
+            
         }
         
         .maintitle{
@@ -150,11 +157,7 @@ top: 2vmin;
         }
         
         .mainimgdog {
-            position: relative;
-            left: -200vw;
-            width: 200px;
-            z-index: -1;
-            margin-bottom: 10px;
+
         }
         
 

@@ -230,7 +230,7 @@ const Booking = () => {
       <ul>{input_blist}</ul> </div>
 
 
-
+<br /><br /><br />
     </div> );
 }
  
