@@ -210,8 +210,8 @@ top: 2vmin;
         .page3bac{
             width: 100%;
             background-image: url(/src/img/play.jpg);
-            background-size: 70rem;
-                        background-repeat: repeat-y;
+            background-size: 40rem;
+            background-repeat: repeat-y;
             background-position: bottom left;
         }
         
