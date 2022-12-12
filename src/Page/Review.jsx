@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaStar } from 'react-icons/fa'; 
 import "./Css/Review.css";
+import { doc, setDoc } from "firebase/firestore"; 
+import { db } from "../Database/firebase";
+
 
 const ARRAY = [0, 1, 2, 3, 4];
 
@@ -27,7 +30,20 @@ const Review = () => {
     const inputusername = useRef(null);
     const inputnote = useRef(null);
   
-    
+
+console.log (localStorage.getItem("currentUser"));
+const userkey = localStorage.getItem("currentUser"); 
+    const addreview = async (user) => {
+
+      await setDoc(doc(db, "review", userkey), {
+        uid: userkey,
+        id: nextId,
+        name: username,
+        text: note,
+        star: sendReview(),
+        timestamp: new Date().toLocaleDateString()
+      });
+    };
   
   /* input값에 문자 입력할 때 마다 실행 되는 이벤트 함수*/
   const onChange = (e) => {
@@ -52,6 +68,7 @@ const Review = () => {
     setLists(about_lists); 
     setNote('');
     setusername(''); //input 태그안에 있는 문자 지워주기
+    addreview(userkey);
   };
   
   /* 리스트들 화면에 띄우기 위해 map으로 반복 요소 불러오기 */
@@ -128,7 +145,7 @@ const Review = () => {
     <label> 닉네임 </label>
     <input name = "username"  type="text"  placeholder="이름&닉네임을 입력해주세요"
      value={username}
-     classname="textbosss" onChange={onChange2} ref={inputusername} id="namebox" 
+     className="textbosss" onChange={onChange2} ref={inputusername} id="namebox" 
          required />
 <br></br>
 

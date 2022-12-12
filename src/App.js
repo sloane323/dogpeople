@@ -13,51 +13,39 @@ import Dogway from './Page/Dogway';
 import School from './Page/School';
 import Register from './Page/Register';
 import Login from './Page/Login';
-import Glogin from './Page/Glogin';
+import store from './Store.js';
 
 import './Database/firebase';
+import { Provider } from 'react-redux';
 import User from './Page/User';
-import Parents from './Page/Parents';
-import Child from './Page/Btn';
-import {firestore} from "./Database/firebase";
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 function App() {
+
   return (
     <div className="App">
-      < Header />
+ <Provider store={store}> 
 
-
-
-       <Routes> 
-          
-          
-          <Route path='/glogin' element={<Glogin />}> </Route>
-          <Route path='/user' element={<User />}> </Route>
-
-          <Route path='/parents' element={<Parents />}> </Route>
-          <Route path='/child' element={<Child />} > </Route>
-          </Routes> 
-
+ < Header />
       <Routes> 
           <Route path='/' element={<Home />}> </Route>
           <Route path='/info' element={<Info />} > 
-          <Route path='course' element={<Course />}/>
-          <Route path='place' element={<Place />} /> </Route>
+            <Route path='course' element={<Course />}/>
+            <Route path='place' element={<Place />} /> </Route>
           <Route path='/course' element={<Course />} />
           <Route path='/place' element={<Place />} />
           <Route path='/booking' element={<Booking />}> </Route>
           <Route path='/review' element={<Review />}> </Route>
           <Route path='/dogway' element={<Dogway />}> </Route>
           <Route path='/school' element={<School />}> </Route>
-          <Route path='/register' element={<Register />}> </Route>
-          <Route path='/login' element={<Login />}> </Route>
+
+      <Route path='/register' element={<Register />}> </Route>
+      <Route path='/login' element={<Login />}></Route>
+      <Route path='/user' element={<User />} /> 
       </Routes> 
 
     <Footer />
-
+</ Provider> 
 
     </div>
   );

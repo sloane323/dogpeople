@@ -194,12 +194,12 @@ color: white;
     .ckeckreview2 {
         margin: 1em;
         border-radius: 10px;
-        width: 15em;
-        height: 3.5em;
+        width: 10em;
+        height: 3em;
         border: none;
         color: #61A5B2;
         border: 0.5px solid #61A5B2;
-        font-size: 3vmin;
+        font-size: 2.2vmin;
         font-weight: bolder;
     }
     

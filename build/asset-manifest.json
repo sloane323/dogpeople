@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dogpeople/static/css/main.23b1c58f.css",
-    "main.js": "/dogpeople/static/js/main.0f7f1a18.js",
+    "main.css": "/dogpeople/static/css/main.3e28af00.css",
+    "main.js": "/dogpeople/static/js/main.4dcc984b.js",
     "static/js/787.45fcf0d0.chunk.js": "/dogpeople/static/js/787.45fcf0d0.chunk.js",
     "static/media/redline2.png": "/dogpeople/static/media/redline2.a8084b06c9770adf2706.png",
     "static/media/main_01.jpg": "/dogpeople/static/media/main_01.075b64f8de32d8ea37d0.jpg",
@@ -23,17 +23,17 @@
     "static/media/main_s2.png": "/dogpeople/static/media/main_s2.e81bfad050716c120492.png",
     "static/media/main_s1.png": "/dogpeople/static/media/main_s1.4d93711eedac88c6acb9.png",
     "static/media/main1.png": "/dogpeople/static/media/main1.f2f8bcd0963f60f5a39d.png",
-    "static/media/slick.svg": "/dogpeople/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.svg": "/dogpeople/static/media/slick.7ba97953187dc2907930.svg",
     "static/media/slick.eot": "/dogpeople/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/dogpeople/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/dogpeople/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/dogpeople/index.html",
-    "main.23b1c58f.css.map": "/dogpeople/static/css/main.23b1c58f.css.map",
-    "main.0f7f1a18.js.map": "/dogpeople/static/js/main.0f7f1a18.js.map",
+    "main.3e28af00.css.map": "/dogpeople/static/css/main.3e28af00.css.map",
+    "main.4dcc984b.js.map": "/dogpeople/static/js/main.4dcc984b.js.map",
     "787.45fcf0d0.chunk.js.map": "/dogpeople/static/js/787.45fcf0d0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.23b1c58f.css",
-    "static/js/main.0f7f1a18.js"
+    "static/css/main.3e28af00.css",
+    "static/js/main.4dcc984b.js"
   ]
 }

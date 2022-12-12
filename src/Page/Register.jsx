@@ -6,11 +6,17 @@ import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { db } from "../Database/firebase";
+import { db, auth } from "../Database/firebase";
 import { doc, setDoc } from "firebase/firestore";
-import { Link, Navigate } from "react-router-dom";
+import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {LOGIN} from "../modules/Login"
+import FindPassword from "./FindPassword";
 
 const Register = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -18,7 +24,7 @@ const Register = () => {
   const [phone, setphone] = useState("");
 
   const [error, setError] = useState({
-    phoneError: false,
+    phoneError: true,
     passwordError: false,
     ConfirmPasswordError: false,
     userNameError: false,
@@ -33,7 +39,6 @@ const Register = () => {
 
   const onChangephone = (e) => {
     const phoneRegex = /^[0-9\b -]{0,13}$/;
-    console.log(e.target.value.length);
     // 문자 길이로 확인하여 그전에도 알림뜨기
     if (e.target.value.length !== 13) {
       setError({ ...error, phoneError: true });  }
@@ -48,6 +53,7 @@ const Register = () => {
     }
   };
 
+  
   useEffect(() => {
     if (phone.length === 10) {
       setphone(phone.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3"));
@@ -61,10 +67,9 @@ const Register = () => {
 
   const onChangePassword = (e) => {
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-    console.log(e.target.value)
     if (!e.target.value || passwordRegex.test(e.target.value))
       setError({ ...error, passwordError: false });
-    else {  console.log("error")
+    else { 
       setError({ ...error, passwordError: true });  }
     setPassword(e.target.value);
   };
@@ -116,34 +121,58 @@ const Register = () => {
 
   // 서버에 데이터 추가
 
-  const [lists, setLists] = useState([]);
-  const [nextId, setNextId] = useState(0);
 
-  const submit = (e) => {
-    e.preventDefault(); //새로고침 방지
-    const about_lists = lists.concat({
-      //원래 있는 리스트에 붙여주기
-      id: nextId,
-      email: email,
-      username: username,
-      password: password,
+  const createUser = async (user) => {
+    await setDoc(doc(db, "Register", user.uid), {
+      uid: user.uid,
+      email: user.email,
+      name: user.Name,
       phone: phone,
-    });
-    setNextId(nextId + 1); //id값 +
-    setLists(about_lists);
-
-  };
-
-  const uid = Math.random().toString(36).substring(2, 12);
-  const addUserData2 = async () => {
-    await setDoc(doc(db, "Register", email), {
-      Uerid: {uid},
-      email: email,
-      username: username,
-      password: password,
-      phone: phone,
+      profile: "",
+      booking:"",
+      review:"",
       timestamp: new Date().toLocaleDateString()
     });
+  };
+
+  const addUserData2 = async (e) => {
+    e.preventDefault();
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log("가입성공!")
+      navigate("/glogin");
+      createUser(userCredential.user);
+      dispatch(LOGIN(userCredential.user.uid));
+      console.log(userCredential)
+      dblogin(userCredential.user.email)
+      const dblogin = (e) => {
+        e.preventDefault();
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            console.log("로그인성공!")
+            dispatch(LOGIN(user.uid));
+          })
+          .catch((error) => {
+            console.log("로그인실패!")
+            alert("아이디와 비밀번호를 확인해주세요")
+
+          });
+      };
+
+    } catch (e) {
+      console.log(e.message);
+      console.log("가입실패!")
+      alert("이미 가입된 이메일 입니다. 비밀번호를 확인해주세요")
+   
+      
+    }
   };
 
   return (
@@ -154,7 +183,7 @@ const Register = () => {
       <h1> 가입하기 </h1>
       <div> 서비스 이용을 위해 필요한 필수 정보를 입력해주세요 </div> <br></br>
       <br></br>
-      <form onSubmit={submit}>
+      <form onSubmit={addUserData2}>
         <FormControl sx={{ m: 1, width: "25ch" }} variant="standard">
           <InputLabel htmlFor="standard-email">email</InputLabel>
           <Input
@@ -283,13 +312,17 @@ const Register = () => {
             </div>
           )}
         </FormControl>{" "}
+        <br></br> 
         <br></br>
-        <br></br>
-        <button type="submit" onClick={addUserData2}
-        disabled={!(!null&&!error.emailError && !error.phoneError && !error.passwordError
-          && !error.ConfirmPasswordError && !error.userNameError  )}
-        >가입</button>
-        <br></br>{" "}
+
+            {
+!error.emailError && !error.phoneError && !error.passwordError
+&& !error.ConfirmPasswordError && !error.userNameError ? 
+<div>
+<button className='simplebtn' onClick={addUserData2} > 가입하기 </button> 
+<FindPassword />  </div> 
+: <div> 모든 정보를 입력해주세요 </div>
+            }
       </form>
       <br />
       <br />

@@ -7,15 +7,23 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { Button } from '@mui/material';
 import { useState } from 'react';
-import GoogleIcon from '@mui/icons-material/Google';
 import { Link } from 'react-router-dom';
 
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import "./Css/Login.css";
+
+import { getAuth, GoogleAuthProvider, signInWithPopup ,signInWithEmailAndPassword    } from "firebase/auth";
 import {useNavigate} from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { doc, setDoc, getDoc} from "firebase/firestore";
+import { db } from "../Database/firebase";
+import {LOGIN} from "../modules/Login"
+import FindPassword from './FindPassword';
+
 
 const Login = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate();
     
     const [values, setValues] = useState({
         password: '',
@@ -49,7 +57,19 @@ const Login = () => {
     event.preventDefault();
   };
 
-  const navigater = useNavigate();
+
+  const createUser = async (user) => {
+    await setDoc(doc(db, "Register", user.uid), {
+      uid: user.uid,
+      email: user.email,
+      name: user.displayName,
+      phone: user.phone,
+      profile: "",
+      booking:"",
+      review:"",
+      timestamp: new Date().toLocaleDateString()
+    });
+  };
 
   // 구글로 로그인하기 버튼을 눌렀을때 파이어스토어를 들고와서 사용
   const googleLogin = () => {
@@ -57,37 +77,58 @@ const Login = () => {
     const provider = new GoogleAuthProvider();
     provider.addScope("profile");
     provider.addScope("email");
-
-
     const auth = getAuth();
     signInWithPopup(auth, provider)
       .then((result) => {
         // 로그인된 결과를 구글인증을 통해서 확인 > 토큰 발급
         const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
         // 로그인된 결과 중에서 user를 통해서 관련 정보를 가져올수 있다
         const user = result.user;
-        console.log(user) 
-        console.log(user.displayName) 
-        console.log(user.photoURL) 
-        navigater('/user',{state:{
-            name : user.displayName,
-            email : user.email,
-            photo : user.photoURL
-        }});
+        const checkDoc = async () => {
+          const docRef = doc(db, "userList", user.uid);
+          const docSnap = await getDoc(docRef);
+          if (!docSnap.exists()){
+            createUser(user)
+          }  checkDoc();
+        }
+        navigate("/user");
+        dispatch(LOGIN(user.uid));
+        console.log("구글로그인성공!")
       })
       .catch((error) => {
-        // 
-        const errorCode = error.code;
         const errorMessage = error.message;
-        // 
-        const email = error.customData.email;
-        // 
-        const credential = GoogleAuthProvider.credentialFromError(error);
         console.log(errorMessage);
       });
   };
 
+  // 일반 로그인 
+  const dblogin = (e) => {
+    e.preventDefault();
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, values.password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(user)
+        console.log("로그인성공!")
+        navigate("/user", {
+          state: {
+            name: user.displayName,
+            email: user.email,
+            photo: null,
+            uid:user.uid  // 이메일 로그인이므로 아직 값이 없다
+          },
+        });
+        dispatch(LOGIN(user.uid));
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log("로그인실패!")
+        alert("아이디와 비밀번호를 확인해주세요")
+
+      });
+  };
 
 
     return ( 
@@ -99,7 +140,6 @@ const Login = () => {
      <h1>로그인</h1>
     <div> 서비스 시작을 위해 로그인을 해주세요 </div>
 <form> 
-
 
         <FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
           <InputLabel htmlFor="standard-email">email</InputLabel>
@@ -135,18 +175,17 @@ const Login = () => {
             }
           />
         </FormControl>
-  <br></br>
-  <div>
-  <span> 아이디찾기 </span> /
-  <span> 비밀번호 찾기 </span>  <br></br>
-  </div>  <br></br>
 
-  <Button>로그인</Button><br></br>
+
+  <span>   <FindPassword /> </span>  
+  <br />
+
+  <button className='simplebtn' onClick={dblogin}>로그인</button><br></br>
 <span  style={{fontSize:'12px', margin:"7px"}}> or </span><br></br>
-<button onClick={googleLogin} > <GoogleIcon />  계정으로 계속하기</button><br></br>
+<button type = "button" className='simplebtn2' onClick={googleLogin} > google 계정으로 계속하기</button><br></br>
 
 
-<div> 계정이 없으시다면 <span><Link to="/register" className='text0' style={{fontWeight: "bold"}} >회원가입</Link></span>을 해주세요 </div>
+<div className='textm'> 계정이 없으시다면 <span><Link to="/register" className='text0' style={{fontWeight: "bold"}} ><u>회원가입</u></Link></span>을 해주세요 </div>
 </form>
 
 </div>
