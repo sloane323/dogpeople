@@ -1,9 +1,17 @@
+.pc_tab {
+
+}
+
+.mo_tab {
+  display: none;
+}
+
 .busanmap{
     width: 50em;
 }
 
 .text-boxb {
-    padding:20px;
+    padding:10px;
 }
 
   .text-box {
@@ -12,6 +20,7 @@
   }
 
   .styletab {
+    margin: -20em;
     overflow: scroll;
     width: 100%;
     font-family: "GmarketSansMedium";
@@ -44,17 +53,35 @@
 
 .text-boxb {
   display: none;
+
 }
 
-  .text-box {
-    display: flex;
-    margin-top:  1px;
-  }
+
+.pc_tab {
+  display: none;
+}
+
+.mo_tab {
+display: contents;
+}
+
+
+.text-boxb {
+    padding:0px;
+}
+
+.text-box {
+  display: flex;
+  margin: 0px;
+}
 
   .styletab {
     overflow: scroll;
     width: 100%;
     font-family: "GmarketSansMedium";
+
+    margin: 0px;
+
   }
 
   .placemain {

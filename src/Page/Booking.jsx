@@ -229,7 +229,9 @@ const Booking = () => {
       <div className='bookinput'>
       <ul>{input_blist}</ul> </div>
 
+
 <br /><br /><br /><br />
+
 
     </div> );
 }

@@ -133,11 +133,14 @@ top: 2vmin;
 
         .dogphoto{
             position: relative;
-            left: 50vw;
-            top:10vw;
-            width: 500px;
-            z-index: -15;
+            display:flexbox;
+            width: 400px;
+            top:30px;
+            left: 10vw;
+            z-index: 1;
             margin-bottom: 10px;
+            
+
         }
         
 
@@ -156,11 +159,13 @@ top: 2vmin;
         }
         
         .mainimgdog {
+
             position: relative;
             left: -100vw;
             width: 500px;
             z-index: -1;
             margin-bottom: 10px;
+
         }
         
 
@@ -213,8 +218,8 @@ top: 2vmin;
         .page3bac{
             width: 100%;
             background-image: url(/src/img/play.jpg);
-            background-size: 70rem;
-                        background-repeat: repeat-y;
+            background-size: 40rem;
+            background-repeat: repeat-y;
             background-position: bottom left;
         }
         

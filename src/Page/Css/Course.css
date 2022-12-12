@@ -35,7 +35,7 @@
 
 .lineboxicon {
     margin-top: 2em;
-    width: 100%;
+    width: 90%;
     height: 10em;
     justify-self: center;
     display: grid;
@@ -183,10 +183,15 @@ width: 80%;
 
 @media (max-width: 768px) { 
 
+    .TabPanel{
+        background-color: white;
+    }
+
     .photobox {
         display: grid;
         width: 100%;
-        grid-template-columns: 1fr 1fr 1fr 1fr
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        
     }
     
     .box {
