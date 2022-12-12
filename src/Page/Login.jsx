@@ -57,13 +57,12 @@ const Login = () => {
     event.preventDefault();
   };
 
-
   const createUser = async (user) => {
-    await setDoc(doc(db, "Register", user.uid), {
+    await setDoc(doc(db, "user", user.uid), {
       uid: user.uid,
       email: user.email,
       name: user.displayName,
-      phone: user.phone,
+      phone: user.phoneNumber,
       profile: "",
       booking:"",
       review:"",
@@ -71,26 +70,33 @@ const Login = () => {
     });
   };
 
+
   // 구글로 로그인하기 버튼을 눌렀을때 파이어스토어를 들고와서 사용
   const googleLogin = () => {
     console.log("로그인?")
     const provider = new GoogleAuthProvider();
     provider.addScope("profile");
     provider.addScope("email");
+
     const auth = getAuth();
     signInWithPopup(auth, provider)
       .then((result) => {
         // 로그인된 결과를 구글인증을 통해서 확인 > 토큰 발급
         const credential = GoogleAuthProvider.credentialFromResult(result);
-        // 로그인된 결과 중에서 user를 통해서 관련 정보를 가져올수 있다
+        const token = credential.accessToken;
         const user = result.user;
+        console.log(user);
+
         const checkDoc = async () => {
-          const docRef = doc(db, "userList", user.uid);
+          const docRef = doc(db, "user", user.uid);
           const docSnap = await getDoc(docRef);
+          console.log(docSnap);
           if (!docSnap.exists()){
-            createUser(user)
-          }  checkDoc();
-        }
+            createUser(user);
+            console.log("실행")
+          }  
+        } 
+        checkDoc();
         navigate("/user");
         dispatch(LOGIN(user.uid));
         console.log("구글로그인성공!")
@@ -100,6 +106,8 @@ const Login = () => {
         console.log(errorMessage);
       });
   };
+
+
 
   // 일반 로그인 
   const dblogin = (e) => {
@@ -115,7 +123,6 @@ const Login = () => {
           state: {
             name: user.displayName,
             email: user.email,
-            photo: null,
             uid:user.uid  // 이메일 로그인이므로 아직 값이 없다
           },
         });
