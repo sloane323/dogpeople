@@ -3,57 +3,74 @@ import { useEffect, useState } from 'react';
 import { useLocation} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'; 
 import { db } from "../Database/firebase";
-import { collection, query, where, getDocs,  doc, getDocFromCache ,DocumentReference } from "firebase/firestore";
+import { collection, query, where, getDocs, getDoc, doc, getDocFromCache ,DocumentReference } from "firebase/firestore";
 import {GET_CURRENT_USER_INFO} from "../modules/Login"
 import { useSelector } from 'react-redux';
 import {LOGOUT} from "../modules/Login"
+import MyReviewBox from '../Componment/MyReviewbox';
+import MyBookingBox from '../Componment/MyBookingBox';
 
 
 const User = (props) => {
     const navigate = useNavigate();
     const currentUser = useSelector((state) => state.login.currentUser);
+
     const loginout = () => {  
         // 리덕스 혹은 Context의 user값을 null로 만들어 로그아웃을 해준다, 
         navigate('/');
         LOGOUT(false);
     }
 
-    console.log(currentUser);
-    const docRef = doc(db, "user", currentUser);
-    const finduserinfo = async (user) => { 
+const [name, setName] = useState();
+const docRef = doc(db, "user", currentUser);
 
-        const q = query(collection(db, "user"), where("uid", "==", currentUser));
-        const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          console.log(doc.data());
-        });
-    }
+async function getUsers() {
+    const docSnap = await getDoc(docRef);  
+if (docSnap.exists()) {
+  console.log("Document data:", docSnap.data());
+  const userinfo = docSnap.data()
+  console.log(userinfo);
+  setName (userinfo.name);
 
-    
+} else {
+  // doc.data() will be undefined in this case
+  console.log("No such document!");
+} return docSnap.data; 
+      
+};
+
+
+
+
 
 return ( <div> <br /><br /><br /><br /><br />
 
-            <h1>유저페이지입니다</h1>
-            <p>{doc.data(name)}  ({finduserinfo.email})님 안녕하세요. </p>
-            <p></p>
-            <img src={finduserinfo.uid} alt="" />
+<button onClick={getUsers} > 시작 </button>
+            <h1> 마이페이지입니다</h1>
+         {name}  님 안녕하세요.
+           
             <hr />
-            <p> {finduserinfo.name}  님의 예약 </p>
+            <p>    {name}  님의 예약 </p>
+            <MyBookingBox /> 
+                <div>  <br />
+              
 
-
+                </div>
 <hr />
-            <p> {finduserinfo.name}  님의 리뷰</p>
-
+            <p>    {name}  님의 리뷰</p>
+            <MyReviewBox /> 
 
             <hr />
             <br /><br />
            
-            <button>찾아랏</button> 
+
  <button onClick={loginout}>로그아웃</button> 
+
+
 
 <br /><br /><br /><br /><br />
 </div> );
+
 }
- 
+
 export default User;

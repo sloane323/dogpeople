@@ -20,7 +20,7 @@
   }
 
   .styletab {
-    margin: -20em;
+    margin: 0;
     overflow: scroll;
     width: 100%;
     font-family: "GmarketSansMedium";

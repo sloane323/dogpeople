@@ -4,6 +4,8 @@ import "./Css/Booking.css";
 import  { useState,  useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { doc, setDoc } from "firebase/firestore"; 
+import { db } from "../Database/firebase";
 
 const Booking = () => {
 
@@ -108,7 +110,24 @@ const Booking = () => {
 
       const [blist, setblist] = useState([]);
         const [bookingid, setBookingid] = useState(0);
-    
+
+        console.log (localStorage.getItem("currentUser"));
+
+        const userkey = localStorage.getItem("currentUser"); 
+        const addBooking = async (user) => {
+
+          await setDoc(doc(db, "booking", Math.random().toString(36)), {
+            dogs: period,
+            human:  Selected,
+            date: timecheck,
+            time: shotcheck,
+            username: username,
+            uid:userkey, 
+            timestamp: new Date().toLocaleDateString(),
+            reviewid:Math.random().toString(36)
+          }); }
+
+
     const submituu = (e) => {
         e.preventDefault(); //새로고침 방지
         handleClose(); 
@@ -119,13 +138,15 @@ const Booking = () => {
         dog: {period},
         date: {timecheck},
         time: {shotcheck},
-
         });
        setBookingid(bookingid +20021); //id값 +1
       
         /*방금 붙여준 리스트까지 포함 된 리스트로 세팅하기*/
         setblist(about_blist); 
-      };
+        addBooking(userkey);
+        };
+    
+   
       
     
     

@@ -35,13 +35,14 @@ console.log (localStorage.getItem("currentUser"));
 const userkey = localStorage.getItem("currentUser"); 
     const addreview = async (user) => {
 
-      await setDoc(doc(db, "review", userkey), {
+      await setDoc(doc(db, "review", Math.random().toString(36)), {
         uid: userkey,
         id: nextId,
         name: username,
         text: note,
         star: sendReview(),
-        timestamp: new Date().toLocaleDateString()
+        timestamp: new Date().toLocaleDateString(),
+        reviewid:Math.random().toString(36)
       });
     };
   
