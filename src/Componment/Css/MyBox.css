@@ -1,0 +1,20 @@
+
+.getreviewbox {
+    width: 50%;
+    height: 150px;
+    border: 2px solid black;
+    overflow: scroll;
+    background-color: pink; 
+display: flex;}
+
+.litext{
+    display : flex;
+    float : left;
+}
+
+.tiems li{
+    background-color: pink;
+    display: flex;
+
+}
+

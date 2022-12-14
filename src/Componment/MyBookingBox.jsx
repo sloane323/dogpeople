@@ -18,9 +18,8 @@ const MyBookingBox = () => {
             const bookings = doc.data();
             // doc.data() is never undefined for query doc snapshots
             //console.log(doc.id, " => ", doc.data())
-            console.log(bookings);
             console.log(bookings.date)
-           console.log(bookings.dogs)
+            console.log(bookings.dogs)
             console.log(bookings.human)
             console.log(bookings.time)
             console.log(bookings.timestamp)
@@ -28,14 +27,16 @@ const MyBookingBox = () => {
             console.log(bookings.username)
 
             setBooking((prev)=>{
-                return [...prev,  bookings.username, bookings.date, bookings.time, bookings.human, bookings.dogs , bookings.timestamp   ]
+                return [...prev,  bookings.username, bookings.date, bookings.time, bookings.human, bookings.dogs , bookings.timestamp ]
             });
+
+
+
             //settext(bookings.text);
            // settimestamp(bookings.timestamp);
-            //setDataName (bookings);
+            //setDataName (bookings); 
         });
-
-
+        console.log("예약이 없습니다.")
     }
 
 
@@ -43,11 +44,14 @@ const MyBookingBox = () => {
         <div>
 <button onClick={getBooking}> 예약 보기 </button> 
 <br />
+<div className='getreviewbox'>
  {booking.map((item) => ( 
 <div key ={item}>
 <li>  {item} </li>
 </div>
 ))}  
+</div>
+
 
         </div>
      );
