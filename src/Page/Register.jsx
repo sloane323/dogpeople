@@ -11,7 +11,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import {LOGIN} from "../modules/Login"
+import {LOGIN} from "../Modules/Login"
 import FindPassword from "./FindPassword";
 
 const Register = () => {

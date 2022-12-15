@@ -17,7 +17,7 @@ import {useNavigate} from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { doc, setDoc, getDoc} from "firebase/firestore";
 import { db } from "../Database/firebase";
-import {LOGIN} from "../modules/Login"
+import {LOGIN} from "../Modules/Login";
 import FindPassword from './FindPassword';
 
 
@@ -72,12 +72,10 @@ const Login = () => {
 
 
   // 구글로 로그인하기 버튼을 눌렀을때 파이어스토어를 들고와서 사용
-  const googleLogin = () => {
+  const googleLogin = (e) => {
+    e.preventDefault();
     console.log("로그인?")
     const provider = new GoogleAuthProvider();
-    provider.addScope("profile");
-    provider.addScope("email");
-
     const auth = getAuth();
     signInWithPopup(auth, provider)
       .then((result) => {
