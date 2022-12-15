@@ -94,12 +94,13 @@ width: 80%;
 
 .ballon {
 	position: relative;
-	background: #00aabb;
+
 	border-radius: 1em;
     transition: all 0.2s ease-in;
     padding: 1em;
     color: white;
     font-size: small;
+
 }
 
 
@@ -199,7 +200,7 @@ width: 80%;
         margin: 0 auto;
         width: 90%;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        background-color: #00aabb;
+        overflow: visible;
     }
  
     
