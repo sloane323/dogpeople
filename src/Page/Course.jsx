@@ -29,12 +29,13 @@ const Course = () => {
     <span  className="sub-title">Course 
      코스 안내 </span> </div> <br /> <br />
 
+<div className="photoboxB">
 <div className="photobox">
      <div className="box"></div>
      <div className="box2"></div>
      <div className="box3"></div>
      <div className="box4"></div> 
-     </div>
+     </div></div>
 
 
 <div> <br />

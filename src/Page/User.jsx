@@ -3,9 +3,8 @@ import { useLocation} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'; 
 import { db } from "../Database/firebase";
 import { collection, query, where, getDocs, getDoc, doc, getDocFromCache ,DocumentReference } from "firebase/firestore";
-import {GET_CURRENT_USER_INFO} from "../modules/Login"
 import { useSelector } from 'react-redux';
-import {LOGOUT} from "../modules/Login"
+import {LOGOUT,GET_CURRENT_USER_INFO} from "../Modules/Login"
 import MyReviewBox from '../Componment/MyReviewbox';
 import MyBookingBox from '../Componment/MyBookingBox';
 

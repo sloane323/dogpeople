@@ -8,7 +8,7 @@ const Dogway = () => {
 <p>반려견을 사랑하는 보호자라면 당연히 자신의 강아지를 행복하게 해주는 법에 관심이 많을 것입니다. 반려견을 행복하게 해 주기 위해서는 강아지의 본성에 대한 이해가 우선해야 합니다. 여러분의 애완견을 행복하게 만들어 줄 수 있는 작은 방법들을 알아보겠습니다.</p>
 <br></br>
 
-<img src="https://mediahub.seoul.go.kr/uploads/mediahub/2021/10/PaeYuUyCfkeVyhYgslOxfDymjGOKHRqj.png"></img>
+<img src="https://mediahub.seoul.go.kr/uploads/mediahub/2021/10/PaeYuUyCfkeVyhYgslOxfDymjGOKHRqj.png" style={{width:"100%" , height:"100%"}}></img>
 
 
 <div>
