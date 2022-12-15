@@ -200,16 +200,16 @@ width: 80%;
         margin: 0 auto;
         width: 90%;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        overflow: visible;
+        overflow: auto;
     }
  
     
     .box {
         justify-self: center;
         margin: auto;
-        width: 6em;
-        height: 6em; 
-        border-radius: 70%;
+        width: 5em;
+        height: 5em; 
+        border-radius: 50%;
         overflow: hidden;
         background-image: url(https://fastly.4sqi.net/img/general/600x600/23178275_dunGz8CgYG_jLT2U9uGMpEKXuU4zezU7IJTuva7_J0Y.jpg);
         background-size: 100px;
@@ -221,8 +221,8 @@ width: 80%;
     .box2{
         justify-self: center;
         margin: auto;
-        width: 6em;
-        height: 6em; 
+        width: 5em;
+        height: 5em; 
         border-radius: 70%;
         overflow: hidden;
         background-image: url(https://www.bukhangbr.com/images/index/M_visual_01.jpg);
@@ -235,8 +235,8 @@ width: 80%;
     .box3{
         justify-self: center;
         margin: auto;
-        width: 6em;
-        height: 6em; 
+        width: 5em;
+        height: 5em; 
         border-radius: 70%;
         overflow: hidden;
         background-image: url(https://www.visitbusan.net/uploadImgs/files/cntnts/20191229160828011_wufrotr);
@@ -249,8 +249,8 @@ width: 80%;
     .box4{
         justify-self: center;
         margin: auto;
-        width: 6em;
-        height: 6em; 
+        width: 5em;
+        height: 5em; 
         border-radius: 70%;
         overflow: hidden;
         background-image: url(https://dimg.donga.com/ugc/CDB/SHINDONGA/Article/61/b0/68/2f/61b0682f1ce9d2738276.jpg);
