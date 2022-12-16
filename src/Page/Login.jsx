@@ -17,7 +17,7 @@ import {useNavigate} from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { doc, setDoc, getDoc} from "firebase/firestore";
 import { db } from "../Database/firebase";
-import {LOGIN} from "../Modules/Login";
+import {LOGIN} from "../modules1/Login";
 import FindPassword from './FindPassword';
 
 

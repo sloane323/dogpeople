@@ -24,14 +24,16 @@ import go9 from '../img/mainph05.jpg';
 import go10 from '../img/mainph06.jpg';
 import go11 from '../img/mainph08.jpg';
 
-const Mainphotos = () => {
 
+
+const Mainphotos = () => {
+  const [isHovering, setIsHovering] = useState(0);
 
     return ( <div><br></br><br></br>
  <div>
  <Swiper
         modules={[Autoplay, EffectCoverflow ,Pagination]}
-        effect='coverflow'
+
         grabCursor={true}
         centeredSlides={true}
         coverflowEffect={{
@@ -45,7 +47,15 @@ const Mainphotos = () => {
         autoplay={{ delay: 1000 }}
       >
         <SwiperSlide>
+          <div className="imgboxinfo"
+          onMouseOver={() => setIsHovering(1) .slideDown(1000) }
+          onMouseOut={() => setIsHovering(0) .slideDown(1000)} >
           <img src={go1} alt='1' />
+          { isHovering ?     <div className="boxinfo">
+          <p>사지마세요 입양하세요</p>
+          </div> : ""
+          }
+       </div> 
         </SwiperSlide>
         <SwiperSlide>
         <img src={go2} alt='1' />
@@ -84,7 +94,6 @@ const Mainphotos = () => {
 <div>
  <Swiper
         modules={[Autoplay, EffectCoverflow ,Pagination]}
-        effect='coverflow'
         grabCursor={true}
         centeredSlides={true}
         coverflowEffect={{
@@ -97,9 +106,10 @@ const Mainphotos = () => {
         className="mySwipermo"
         autoplay={{ delay: 1000 }}
       >
-        <SwiperSlide>
-          <img src={go1} alt='1' />
+       <SwiperSlide>
+        <img src={go1} alt='1' />
         </SwiperSlide>
+
         <SwiperSlide>
         <img src={go2} alt='1' />
         </SwiperSlide>

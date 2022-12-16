@@ -26,7 +26,7 @@
     "force": "^0.0.3",
     "react": "^18.2.0",
     "react-async": "^10.0.1",
-    "react-bootstrap": "^2.6.0",
+    "react-bootstrap": "^2.7.0",
     "react-bootstrap-modal": "^4.2.0",
     "react-coverflow": "^0.2.20",
     "react-dom": "^18.2.0",

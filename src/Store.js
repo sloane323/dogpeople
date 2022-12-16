@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import LoginReducer from "./Modules/Login";
+import LoginReducer from "./modules1/Login";
 
 export default configureStore({
   reducer: {
