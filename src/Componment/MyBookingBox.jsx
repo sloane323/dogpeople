@@ -4,14 +4,15 @@ import { db } from "../Database/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { useSelector } from 'react-redux';
 import '../Componment/Css/MyBox.css';
+import { useEffect } from 'react';
 
 const MyBookingBox = () => {
 
     const currentUser = useSelector((state) => state.login.currentUser);
     const [booking,setBooking] = useState([]);
 
-    
-    async function getReview() {
+    useEffect(()=>{ 
+    async function getBooking() {
         const q = query(collection(db, "booking"), where("uid", "==", currentUser));
         const querySnapshot = await getDocs(q);
         const rweetArray = [];
@@ -19,15 +20,17 @@ const MyBookingBox = () => {
             const dataName = doc.data();
             rweetArray.push(dataName);
         }); 
-        setBooking(rweetArray);   
-         } 
+        setBooking(rweetArray);     } 
+        getBooking();
+       
+        } ,100);
 
     return ( 
         <div className='all-w'>
-<button onClick={getReview} className="simplebtn"> 예약 보기 </button> 
+<button className="simplebtn"> 예약  </button> 
 <br />
 { booking.length==0 ? 
-<p> 값이 없습니다. </p>
+<p> 예약이 없습니다. </p>
 :
 <div className='docbox'>
 {

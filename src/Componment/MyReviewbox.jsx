@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { db } from "../Database/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { useSelector } from 'react-redux';
@@ -12,27 +12,35 @@ const MyReviewBox = () => {
     const [reviewList,setReviewList]= useState([]);
 
  
-        async function getReview() {
-            const q = query(collection(db, "review"), where("uid", "==", currentUser));
-            const querySnapshot = await getDocs(q);
-            const rweetArray = [];
-            querySnapshot.forEach((doc) => {
-                const dataName = doc.data();
-                rweetArray.push(dataName);
-            }); 
-            setReviewList(rweetArray);   
-             }
+    useEffect(()=>{
+        async function  getReview ()  {
+        const q = query(collection(db, "review"), where("uid", "==", currentUser));
+        const querySnapshot = await getDocs(q);
+        const rweetArray = [];
+        querySnapshot.forEach((doc) => {
+            const dataName = doc.data();
+            rweetArray.push(dataName);
+        }); 
+        setReviewList(rweetArray);  } 
+        getReview ();
+    } ,100);
+
+
 
 
     return ( 
       <div className='all-w'>
 
 
-<button   onClick={getReview} className="simplebtn"> 리뷰 보기 </button> 
+<button className="simplebtn">
+ 리뷰  </button> 
 <br />
 
+
+
+
 {reviewList.length ==0 ? 
-<p> 값이 없습니다. </p>
+<p> 리뷰가 없습니다. </p>
 :
 <div className='docbox'>
   {

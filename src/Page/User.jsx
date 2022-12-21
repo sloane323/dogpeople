@@ -7,6 +7,7 @@ import MyReviewBox from '../Componment/MyReviewbox';
 import MyBookingBox from '../Componment/MyBookingBox';
 import { getAuth, signOut } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from 'react';
 
 const User = (props) => {
   const dispatch = useDispatch();
@@ -18,7 +19,8 @@ const [name, setName] = useState();
 const [email, setemamil] = useState();
 const docRef = doc(db, "user", currentUser);
 
-async function getUsers() {
+useEffect(()=>{  
+  async function getUsers() {
     const docSnap = await getDoc(docRef);  
 if (docSnap.exists()) {
  //  console.log("Document data:", docSnap.data());
@@ -31,7 +33,7 @@ if (docSnap.exists()) {
  //  console.log("No such document!");
 } return docSnap.data; 
       
-};
+}; getUsers(); } ,100);
 
   // 로그아웃
   const onLogOutClick = () => {
@@ -52,10 +54,18 @@ if (docSnap.exists()) {
 return ( <div className='all-w'> <br />
 
  {/* <button onClick={getUsers} > 시작 </button> */}
-            <h1> 마이페이지입니다</h1>
-     {/* <p>  {name}  님 안녕하세요. <br />
-     고객님의 이메일은 {email} 입니다. </p>   */}
-           
+ <div><br></br><br></br>
+    <span  className="sub-title"> My Page 
+    마이페이지</span> </div> <br /> <br />
+
+{ !name  ? <div> </div>
+  :  <p>  {name}  님 안녕하세요. <br />
+  고객님의 이메일은 {email} 입니다. </p>   
+         
+
+}
+
+ 
 
             <MyBookingBox /> <br />
              <MyReviewBox /> 

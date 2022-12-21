@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dogpeople/static/css/main.7edfb30b.css",
-    "main.js": "/dogpeople/static/js/main.80ca3e84.js",
+    "main.css": "/dogpeople/static/css/main.f856ccfe.css",
+    "main.js": "/dogpeople/static/js/main.1c1d664e.js",
     "static/js/787.45fcf0d0.chunk.js": "/dogpeople/static/js/787.45fcf0d0.chunk.js",
     "static/media/redline2.png": "/dogpeople/static/media/redline2.a8084b06c9770adf2706.png",
     "static/media/main_01.jpg": "/dogpeople/static/media/main_01.075b64f8de32d8ea37d0.jpg",
@@ -24,12 +24,12 @@
     "static/media/main_s1.png": "/dogpeople/static/media/main_s1.4d93711eedac88c6acb9.png",
     "static/media/main1.png": "/dogpeople/static/media/main1.f2f8bcd0963f60f5a39d.png",
     "index.html": "/dogpeople/index.html",
-    "main.7edfb30b.css.map": "/dogpeople/static/css/main.7edfb30b.css.map",
-    "main.80ca3e84.js.map": "/dogpeople/static/js/main.80ca3e84.js.map",
+    "main.f856ccfe.css.map": "/dogpeople/static/css/main.f856ccfe.css.map",
+    "main.1c1d664e.js.map": "/dogpeople/static/js/main.1c1d664e.js.map",
     "787.45fcf0d0.chunk.js.map": "/dogpeople/static/js/787.45fcf0d0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7edfb30b.css",
-    "static/js/main.80ca3e84.js"
+    "static/css/main.f856ccfe.css",
+    "static/js/main.1c1d664e.js"
   ]
 }
