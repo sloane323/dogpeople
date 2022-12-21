@@ -99,3 +99,57 @@
     width: 100%;
     opacity: 1;
   }
+
+  .simplebtn {
+    font-size: medium;
+    background-color:  #61A5B2;
+    color: white;
+    width: 25ch;
+    padding: 1em;
+    border-radius: 0.5em;
+    border:none;
+    transition: all ease 0.5s 0s;
+    height: 50px;
+}
+
+.simplebtn:hover {
+    text-align: left;
+    background-color: white;
+    border: 1px solid #61A5B2;
+    color: #61A5B2;
+    width: 25ch;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.lable {
+    text-align: left;
+    font-size: medium;
+}
+
+
+
+
+.simplebtn2 {
+    font-size: medium;
+    color: #61A5B2;
+    border: 1px solid #61A5B2;
+    width: 25ch;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    transition: all ease 0.5s 0s;
+    height: 50px;
+}
+
+.simplebtn2:hover {
+    font-size: medium;
+    background-color: #61A5B2;
+    color: white;
+}
+
+
+.textm {
+    margin-top: 7px;
+    font-size: small;
+}

@@ -3,54 +3,51 @@ import { useState } from 'react';
 import { db } from "../Database/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { useSelector } from 'react-redux';
+import '../Componment/Css/MyBox.css';
 
 const MyBookingBox = () => {
 
     const currentUser = useSelector((state) => state.login.currentUser);
-    console.log(currentUser);
-
     const [booking,setBooking] = useState([]);
 
-    async function getBooking ()  {
+    
+    async function getReview() {
         const q = query(collection(db, "booking"), where("uid", "==", currentUser));
         const querySnapshot = await getDocs(q);
+        const rweetArray = [];
         querySnapshot.forEach((doc) => {
-            const bookings = doc.data();
-            // doc.data() is never undefined for query doc snapshots
-            //console.log(doc.id, " => ", doc.data())
-            console.log(bookings.date)
-            console.log(bookings.dogs)
-            console.log(bookings.human)
-            console.log(bookings.time)
-            console.log(bookings.timestamp)
-            console.log(bookings.uid)
-            console.log(bookings.username)
-
-            setBooking((prev)=>{
-                return [...prev,  bookings.username, bookings.date, bookings.time, bookings.human, bookings.dogs , bookings.timestamp ]
-            });
-
-
-
-            //settext(bookings.text);
-           // settimestamp(bookings.timestamp);
-            //setDataName (bookings); 
-        });
-        console.log("예약이 없습니다.")
-    }
-
+            const dataName = doc.data();
+            rweetArray.push(dataName);
+        }); 
+        setBooking(rweetArray);   
+         } 
 
     return ( 
-        <div>
-<button onClick={getBooking}> 예약 보기 </button> 
+        <div className='all-w'>
+<button onClick={getReview} className="simplebtn"> 예약 보기 </button> 
 <br />
-<div className='getreviewbox'>
- {booking.map((item) => ( 
-<div key ={item}>
-<li>  {item} </li>
+{ booking.length==0 ? 
+<p> 값이 없습니다. </p>
+:
+<div className='docbox'>
+{
+  booking.map((booking)=>(
+    <div className="reviewbtn" id={booking} key={booking}>
+    <button className="stylechanges">
+    <p> 예약자 : { booking.username } </p>
+    <p> 예약날짜: { booking.timestamp }</p>
+    <hr />
+    <p> 투어날짜: { booking.date }</p>
+    <p> 사람 : { booking.human } 강아지 : { booking.dogs }</p>
+    <p> 투어시간 : { booking.time } </p>
+    </button>
+    </div>
+    ))
+  }
 </div>
-))}  
-</div>
+}
+
+
 
 
         </div>

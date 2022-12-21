@@ -17,4 +17,5 @@ export const user = createSlice({
 export const {
   GET_CURRENT_USER_INFO
 } = user.actions;
+
 export default user.reducer;

@@ -59,7 +59,7 @@ const FindPassword = () => {
             <h3>비밀번호 찾기를 위해서 이메일을 입력해주세요 </h3>
 
             <FormControl sx={{ m: 1, width: "40ch" }} variant="standard">
-              <InputLabel htmlFor="standard-email">email</InputLabel>
+              <div htmlFor="standard-email">email</div>
               <Input
                 id="standard-email"
                 type="email"

@@ -4,8 +4,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   isLoggedIn: false,
   currentUser: localStorage.getItem("currentUser")
-    ? localStorage.getItem("currentUser")
-    : "비회원",
 };
 const login = createSlice({
   name: "login",
@@ -13,10 +11,12 @@ const login = createSlice({
   reducers: {
     LOGIN: (state, action) => {
       state.isLoggedIn = true;
+      state.currentUser = action.payload;
       localStorage.setItem("currentUser", action.payload);
     },
     LOGOUT: (state) => {
       state.isLoggedIn = false;
+      state.currentUser = null;
       localStorage.removeItem("currentUser");
     },
   },

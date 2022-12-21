@@ -3,12 +3,17 @@ import { FaStar } from 'react-icons/fa';
 import "./Css/Review.css";
 import { doc, setDoc } from "firebase/firestore"; 
 import { db } from "../Database/firebase";
+import Login from "../Page/Login"
+import { useDispatch, useSelector } from "react-redux";
 
 
 const ARRAY = [0, 1, 2, 3, 4];
 
 const Review = () => {
 
+  const currentUser = useSelector((state) => state.login.currentUser);
+  const isLogincheck = useSelector((state) => state.login.isLoggedIn);
+    const dispatch = useDispatch();
 
     const week = ["일", "월", "화", "수", "목", "금", "토"];
     const today = new Date();
@@ -133,55 +138,61 @@ const userkey = localStorage.getItem("currentUser");
   
 
     return ( <div className="review">
- <br></br><br></br> <br></br><br></br>
+<br /><br /><br />
         <div>
       <span  className="sub-title">Review 
      리뷰남기기 </span> </div>
-     <br></br><br></br>
-     <br></br><br></br>
-    
-     <div className='reviewbig'>
+     <br />   
 
-<form onSubmit={submit}>
-    <label> 닉네임 </label>
-    <input name = "username"  type="text"  placeholder="이름&닉네임을 입력해주세요"
-     value={username}
-     className="textbosss" onChange={onChange2} ref={inputusername} id="namebox" 
-         required />
-<br></br>
-
-<div className='Wrap'>
-
-      <div className='Stars'>
-        {ARRAY.map((el, idx) => {
-          return (
-            <FaStar
-              key={idx}
-              size="50"
-              onClick={() => handleStarClick(el)}
-              className={clicked[el] && 'yellowStar'}
-            />
-          );
-        })}    <div className='RatingText'> <p> {sendReview() }</p>  </div>
+     { isLogincheck ? 
+  <div className='reviewbig'>
+  <form onSubmit={submit}>
+      <label> 닉네임 </label>
+      <input name = "username"  type="text"  placeholder="이름&닉네임을 입력해주세요"
+       value={username}
+       className="textbosss" onChange={onChange2} ref={inputusername} id="namebox" 
+           required />
+  <br></br>
+  
+  <div className='Wrap'>
+  
+        <div className='Stars'>
+          {ARRAY.map((el, idx) => {
+            return (
+              <FaStar
+                key={idx}
+                size="50"
+                onClick={() => handleStarClick(el)}
+                className={clicked[el] && 'yellowStar'}
+              />
+            );
+          })}    <div className='RatingText'> <p> {sendReview() }</p>  </div>
+        </div>
       </div>
-    </div>
+  
+  
+  <label>리뷰</label> <br></br>
+           <input name="list"   type="text"  placeholder="내용을 작성해주세요."
+            value={note}  onChange={onChange}  ref={inputnote} id="textbox"
+             className='name_box' style={{ height: "100px"}} required />
+      <br></br> <br></br>
+          <button type="submit" className='ckeckreview'>작성</button>
+        </form>
+  
+  
+  
+    <div className='inputlistun'>
+        <ul>{input_list}</ul> </div>
+  
+  
+       </div>  :
+  <div> <h4> 로그인을 하셔야 예약이 진행됩니다.  </h4>
+  <Login /> </div>
+
+}
 
 
-<label>리뷰</label> <br></br>
-         <input name="list"   type="text"  placeholder="내용을 작성해주세요."
-          value={note}  onChange={onChange}  ref={inputnote} id="textbox"
-           className='name_box' style={{ height: "100px"}} required />
-    <br></br> <br></br>
-        <button type="submit" className='ckeckreview'>작성</button>
-      </form>
-
-
-
-  <div className='inputlistun'>
-      <ul>{input_list}</ul> </div>
-
-
-     </div> 
+    
     </div> );
 }
 

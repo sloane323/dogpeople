@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
-import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
@@ -10,7 +9,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import "./Css/Login.css";
+import styles from"./Css/Login.module.css";
 
 import { getAuth, GoogleAuthProvider, signInWithPopup ,signInWithEmailAndPassword    } from "firebase/auth";
 import {useNavigate} from 'react-router-dom'
@@ -81,9 +80,8 @@ const Login = () => {
       .then((result) => {
         // 로그인된 결과를 구글인증을 통해서 확인 > 토큰 발급
         const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
         const user = result.user;
-        console.log(user);
+        //console.log(user);
 
         const checkDoc = async () => {
           const docRef = doc(db, "user", user.uid);
@@ -115,20 +113,12 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        console.log(user)
+       // console.log(user)
         console.log("로그인성공!")
-        navigate("/user", {
-          state: {
-            name: user.displayName,
-            email: user.email,
-            uid:user.uid  // 이메일 로그인이므로 아직 값이 없다
-          },
-        });
         dispatch(LOGIN(user.uid));
+        navigate('/user')
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
         console.log("로그인실패!")
         alert("아이디와 비밀번호를 확인해주세요")
 
@@ -146,23 +136,23 @@ const Login = () => {
     <div> 서비스 시작을 위해 로그인을 해주세요 </div>
 <form> 
 
-        <FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
-          <InputLabel htmlFor="standard-email">email</InputLabel>
+        <FormControl sx={{ m: 1, width: '50%' }} variant="standard">
+          <div className={styles.lable}>이메일 Email</div>
           <Input
+          style={{font:'2px'}}
             id="standard-email"
             type="email"
             placeholder="Email Address" 
             value={email}
             onChange={onChangeEmail}/>
-
              {emailError && <div className="invalid-input" style={{fontSize:'11px', color:"#D73E3E"}} >
             이메일 주소를 확인해주세요. </div>}
         </FormControl> <br></br>
 
   <br></br>
-          <FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
-          <InputLabel htmlFor="standard-password">Password</InputLabel>
-          <Input
+          <FormControl sx={{ m: 1,  width: '50%'  }} variant="standard">
+          <div className={styles.lable}>비밀번호 Password</div>
+                    <Input
             id="standard-password"
             type={values.showPassword ? 'text' : 'password'}
             value={values.password}
@@ -185,12 +175,12 @@ const Login = () => {
   <span>   <FindPassword /> </span>  
   <br />
 
-  <button className='simplebtn' onClick={dblogin}>로그인</button><br></br>
-<span  style={{fontSize:'12px', margin:"7px"}}> or </span><br></br>
-<button type = "button" className='simplebtn2' onClick={googleLogin} > google 계정으로 계속하기</button><br></br>
+<button className={styles.simplebtn} onClick={dblogin}>로그인</button><br></br>
+<span  style={{fontSize:'small', margin:"7px"}}> or </span><br></br>
+<button type = "button" className={styles.simplebtn2} onClick={googleLogin} > google 계정으로 계속하기</button><br></br>
 
 
-<div className='textm'> 계정이 없으시다면 <span><Link to="/register" className='text0' style={{fontWeight: "bold"}} ><u>회원가입</u></Link></span>을 해주세요 </div>
+<div className={styles.textm}> 계정이 없으시다면 <span><Link to="/register" className='text0' style={{fontWeight: "bold"}} ><u>회원가입</u></Link></span>을 해주세요 </div>
 </form>
 
 </div>

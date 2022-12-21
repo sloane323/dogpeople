@@ -6,8 +6,14 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { doc, setDoc } from "firebase/firestore"; 
 import { db } from "../Database/firebase";
+import Login from "../Page/Login"
+import { useDispatch, useSelector } from "react-redux";
 
 const Booking = () => {
+
+  const currentUser = useSelector((state) => state.login.currentUser);
+  const isLogincheck = useSelector((state) => state.login.isLoggedIn);
+    const dispatch = useDispatch();
 
 
      const [show, setShow] = useState(false);
@@ -173,85 +179,93 @@ const Booking = () => {
     return ( <div className="booking-all">       <br></br>
         <div>
       <span  className="sub-title">Booking  예약하기</span> </div>
-     <br></br><br></br>
+     
+     
+      { isLogincheck ? 
+       <div>
+          <form onSubmit={submit}>
 
-
-     <form onSubmit={submit}>
-
-    <label> 닉네임 </label>
-    <input name = "username"  type="text"  placeholder="이름&닉네임을 입력해주세요"
-     value={username}
-     classname="textbosss" onChange={onChange2} ref={inputusername} id="namebox" 
-         required />
-<br></br><br></br>
-
-     <div> <lable> 사람 </lable>
-        <select onChange={handleSelect} value={Selected} class="selected"  required>
-          {selectList.map((item) => (
-            <option value={item} key={item}>
-              {item}
-            </option>
-          ))}
-        </select> 명, &nbsp;
-   
-            <label> 강아지  </label>
-              <select 
-                value={period}
-                onChange={onPeriodChange}
-                class="selected" required>
-                {
-                    periodOptions.slice(0, Selected).map(period => (
-                        <option value={period.value}>{period.label}</option>
-                    ))
-                }
-            </select>  마리 <br></br><br></br>
-            </div>
-
-            <div>
-       <div className='fbig'> <label> 날짜를 선택해주세요 </label> 
-        <div className='title-date' > 
-        <div className="datebox2" required> {dates()} </div>    </div> </div><br></br> 
-        <label> 시간을 선택해주세요 </label><br></br> 
-        <button className={ `${onlys === 0  ? 'active3' : ''}` } onClick={(e)=>{onClicks(e,0)}} value={"10:00- 12:00"} id="shotcheck"> <p> 10:00- 12:00 </p> </button>
-        <button className={ `${onlys === 1  ? 'active3' : ''}` } onClick={(e)=>{onClicks(e,1)}} value={"12:00- 14:00"} id="shotcheck"> <p> 12:00- 14:00 </p> </button>
-  
-      </div>
-
-            <button type="submit" className='ckeckreview2' onClick={handleShow} >예약하기</button>
-      </form> 
-
-      <Modal className='modal-booking'
-     show={show} onHide={handleClose}>
-
-      {  username != "" && Selected != "" &&
-     period!=""&&  timecheck!= null && shotcheck!= null ? 
-
-        <div>
-        <Modal.Body> 
-        <h2> 예약 정보를 확인해주세요  </h2> 
-        <p>
-         {username} 님, 안녕하세요  <br></br>
-
-
-         사람 : {Selected}명과 강아지 : {period}마리가   <br></br>
-        {timecheck}, {shotcheck} 에 함께하는 <br></br> 시티투어에 
-       예약 하시겠습니까? </p>
+          <label> 닉네임 </label>
+          <input name = "username"  type="text"  placeholder="이름&닉네임을 입력해주세요"
+           value={username}
+           classname="textbosss" onChange={onChange2} ref={inputusername} id="namebox" 
+               required />
+      <br></br><br></br>
       
-       </Modal.Body>
-        <Modal.Footer>
-        <button onClick={submituu} className="modalbut"> 예약 </button> 
-        &nbsp;
-          <button onClick={handleClose} className="modalbut"> 취소 </button>
-        </Modal.Footer> </div> : <Modal.Body > <div className= "modalbody-1">모든 정보를 입력해주세요 <br></br> 창을 클릭하면 사라집니다. </div> </Modal.Body> } 
-      </Modal>  
+           <div> <lable> 사람 </lable>
+              <select onChange={handleSelect} value={Selected} class="selected"  required>
+                {selectList.map((item) => (
+                  <option value={item} key={item}>
+                    {item}
+                  </option>
+                ))}
+              </select> 명, &nbsp;
+         
+                  <label> 강아지  </label>
+                    <select 
+                      value={period}
+                      onChange={onPeriodChange}
+                      class="selected" required>
+                      {
+                          periodOptions.slice(0, Selected).map(period => (
+                              <option value={period.value}>{period.label}</option>
+                          ))
+                      }
+                  </select>  마리 <br></br><br></br>
+                  </div>
+      
+                  <div>
+             <div className='fbig'> <label> 날짜를 선택해주세요 </label> 
+              <div className='title-date' > 
+              <div className="datebox2" required> {dates()} </div>    </div> </div><br></br> 
+              <label> 시간을 선택해주세요 </label><br></br> 
+              <button className={ `${onlys === 0  ? 'active3' : ''}` } onClick={(e)=>{onClicks(e,0)}} value={"10:00- 12:00"} id="shotcheck"> <p> 10:00- 12:00 </p> </button>
+              <button className={ `${onlys === 1  ? 'active3' : ''}` } onClick={(e)=>{onClicks(e,1)}} value={"12:00- 14:00"} id="shotcheck"> <p> 12:00- 14:00 </p> </button>
+        
+            </div>
+      
+                  <button type="submit" className='ckeckreview2' onClick={handleShow} >예약하기</button>
+            </form> 
+      
+            <Modal className='modal-booking'
+           show={show} onHide={handleClose}>
+      
+            {  username != "" && Selected != "" &&
+           period!=""&&  timecheck!= null && shotcheck!= null ? 
+      
+              <div>
+              <Modal.Body> 
+              <h2> 예약 정보를 확인해주세요  </h2> 
+              <p>
+               {username} 님, 안녕하세요  <br></br>
+      
+      
+               사람 : {Selected}명과 강아지 : {period}마리가   <br></br>
+              {timecheck}, {shotcheck} 에 함께하는 <br></br> 시티투어에 
+             예약 하시겠습니까? </p>
+            
+             </Modal.Body>
+              <Modal.Footer>
+              <button onClick={submituu} className="modalbut"> 예약 </button> 
+              &nbsp;
+                <button onClick={handleClose} className="modalbut"> 취소 </button>
+              </Modal.Footer> </div> : <Modal.Body > <div className= "modalbody-1">모든 정보를 입력해주세요 <br></br> 창을 클릭하면 사라집니다. </div> </Modal.Body> } 
+            </Modal>  
 
+            <div className='bookinput'>
+             <ul>{input_blist}</ul> <br /><br /><br /><br /> </div> 
+                      </div>
 
+        :
 
-      <div className='bookinput'>
-      <ul>{input_blist}</ul> </div>
+        <div> <h4> 로그인을 하셔야 예약이 진행됩니다.  </h4>
+        <Login /> </div>
 
+      }
 
-<br /><br /><br /><br />
+ 
+
+ 
 
 
     </div> );

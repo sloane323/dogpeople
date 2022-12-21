@@ -1,20 +1,49 @@
+.all-w {
+    font-family: 'GmarketSansMedium';
+    font-size: 2vmax;
+    position: relative;
+    top: 0px;
+}
 
-.getreviewbox {
-    width: 50%;
-    height: 150px;
-    border: 2px solid black;
+.reviewbtn{
+    position: relative;
+    display: contents;
+
+  
+}
+
+.reviewbtn button {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    background-color: white;
+    color:#61A5B2 ;
+    border-radius: 20px;
+    border: 1px solid #61A5B2;
+    margin: 2px;
+}
+
+
+.reviewbtn button:hover {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    background-color: #61A5B2;
+    color: white;
+    border-radius: 20px;
+    margin: 2px;
+}
+
+.docbox {
+    width: 100%;
     overflow: scroll;
-    background-color: pink; 
-display: flex;}
-
-.litext{
-    display : flex;
-    float : left;
+    overflow: auto;
+    white-space: nowrap;
 }
 
-.tiems li{
-    background-color: pink;
-    display: flex;
-
+.stylechanges{
+    font-family: 'GmarketSansMedium';
+    font-size: medium;
+    position: relative;
+    top: 0px;
 }
-

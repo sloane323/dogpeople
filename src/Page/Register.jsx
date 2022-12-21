@@ -7,7 +7,7 @@ import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { db, auth } from "../Database/firebase";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc , addDoc } from "firebase/firestore";
 import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -123,10 +123,10 @@ const Register = () => {
 
 
   const createUser = async (user) => {
-    await setDoc(doc(db, "Register", user.uid), {
+    await setDoc(doc(db, "user", user.uid), {
       uid: user.uid,
-      email: user.email,
-      name: user.Name,
+      email: email,
+      name: username,
       phone: phone,
       profile: "",
       booking:"",
@@ -137,6 +137,7 @@ const Register = () => {
 
   const addUserData2 = async (e) => {
     e.preventDefault();
+
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -144,11 +145,11 @@ const Register = () => {
         password
       );
       console.log("가입성공!")
-      navigate("/glogin");
+      navigate("/user");
       createUser(userCredential.user);
       dispatch(LOGIN(userCredential.user.uid));
       console.log(userCredential)
-      dblogin(userCredential.user.email)
+
       const dblogin = (e) => {
         e.preventDefault();
         const auth = getAuth();
@@ -164,6 +165,7 @@ const Register = () => {
             alert("아이디와 비밀번호를 확인해주세요")
 
           });
+          dblogin(userCredential.user.email)
       };
 
     } catch (e) {
@@ -176,7 +178,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="Review-all">
 
       <br />    <br />    <br /> 
 
