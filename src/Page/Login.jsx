@@ -72,7 +72,6 @@ const Login = () => {
 
   // 구글로 로그인하기 버튼을 눌렀을때 파이어스토어를 들고와서 사용
   const googleLogin = (e) => {
-    e.preventDefault();
     console.log("로그인?")
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
